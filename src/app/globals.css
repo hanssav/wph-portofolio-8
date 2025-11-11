@@ -16,7 +16,7 @@
   --color-neutral-500: #777c88;
   --color-neutral-600: #494d57;
   --color-neutral-700: #383b42;
-  --color-neutral-800: #292b31;
+  --color-neutral-800: #252b37;
   --color-neutral-900: #1b1c21;
   --color-neutral-950: #141417;
 
@@ -141,7 +141,7 @@
 .dark {
   --background: var(--color-black);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: var(--color-black);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
@@ -154,7 +154,7 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: var(--color-neutral-800);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -168,7 +168,7 @@
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-border: var(--color-neutral-800);
   --sidebar-ring: oklch(0.556 0 0);
 }
 /* end of shacdn */

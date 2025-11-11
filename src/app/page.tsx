@@ -2,6 +2,7 @@ import { LayoutWrapper } from '@/components/container';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { IMAGES } from '@/lib/constants/assets';
+import { Star } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -39,16 +40,29 @@ export default function Home() {
               fill
               className='object-cover grayscale'
             />
-
+            <div className='base-container absolute bottom-0 z-30 w-full'>
+              <Card className='relative left-1/2 w-full -translate-x-1/2 lg:w-[316px]'>
+                <CardContent className='space-y-md lg:p-2xl'>
+                  <h1 className='text-display-xs-bold md:text-display-xl'>
+                    5.0
+                  </h1>
+                  <div className='flex-start gap-2'>
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <Star
+                        key={s}
+                        color='#F3993F'
+                        fill='#F3993F'
+                        size={20}
+                        className='lg:size-8'
+                      />
+                    ))}
+                  </div>
+                  <p className='text-md-semibold'>Many Client Trust with me</p>
+                </CardContent>
+              </Card>
+            </div>
             <div className='from-primary to-primary/40 absolute top-0 right-0 h-full w-1/2 bg-linear-to-b mix-blend-color' />
             <div className='absolute inset-0 bg-linear-to-b from-black/60 to-black' />
-          </div>
-          <div className='base-container absolute bottom-0 z-30'>
-            <Card className=''>
-              <CardContent>
-                <h1 className='text-display-xs-bold md:text-display-xl'>5.0</h1>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
