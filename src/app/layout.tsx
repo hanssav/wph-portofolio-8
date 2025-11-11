@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Red_Hat_Display } from "next/font/google";
+import { Red_Hat_Display } from 'next/font/google';
 import './globals.css';
 
 const redHatDisplay = Red_Hat_Display({
-  subsets: ["latin"],
-  variable: "--font-redhat",   // untuk CSS variable
-  display: "swap",             // recommended
+  subsets: ['latin'],
+  variable: '--font-redhat', // untuk CSS variable
+  display: 'swap', // recommended
 });
 
 export const metadata: Metadata = {
@@ -20,10 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='dark'>
-      <body
-   className={redHatDisplay.variable}>
-        {children}
-      </body>
+      <body className={redHatDisplay.variable}>{children}</body>
     </html>
   );
 }
