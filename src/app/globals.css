@@ -173,6 +173,10 @@
 }
 /* end of shacdn */
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -192,7 +196,18 @@
 
 @utility base-container {
   margin: 0 auto;
-  @apply px-4 py-10 md:px-20 lg:px-32;
+  @apply max-w-302 px-4 py-10;
+}
+
+@utility py-section {
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
+  @apply py-10 md:py-20;
+
+  @variant lg {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 @utility flex-center {
@@ -211,4 +226,17 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+/* Typography */
+@utility title {
+  @apply text-display-md-extrabold md:text-display-xl-extrabold lg:text-display-2xl-extrabold text-neutral-25;
+}
+
+@utility sub-title {
+  @apply text-md-medium md:text-lg-medium lg:text-xl-medium text-primary;
+}
+
+@utility desc {
+  @apply text-md-medium md:text-lg-medium lg:text-xl-medium text-neutral-400;
 }
