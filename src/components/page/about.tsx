@@ -84,7 +84,7 @@ const AboutSection = () => {
           <p className='sub-title'>{subTitle}</p>
           <h1 className='title'>
             {parts[0]}
-            <span className='text-primary block'>{highlight}</span>
+            <span className='text-primary inline md:block'>{highlight}</span>
             {parts[1]}
           </h1>
         </div>
@@ -96,8 +96,8 @@ const AboutSection = () => {
       <Mapper
         data={PORTFOLIO}
         className={cn(
-          'relative z-10 mt-10 flex min-h-72 flex-col items-center gap-6 overflow-hidden',
-          'sm:min-h-[380px] md:min-h-[480px]',
+          'relative z-10 mt-10 flex flex-col items-center gap-6 overflow-hidden',
+          'min-h-72 sm:min-h-[380px] md:min-h-[480px]',
           'lg:absolute lg:inset-0 lg:z-10 lg:block lg:min-h-0'
         )}
       >

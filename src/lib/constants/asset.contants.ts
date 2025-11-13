@@ -7,4 +7,23 @@ export const IMAGES = {
   },
 };
 
+export const ICONS = {
+  SKILL: {
+    1: '/icons/Icon-1.svg',
+    2: '/icons/Icon-2.svg',
+    3: '/icons/Icon-3.svg',
+    4: '/icons/icon-4.svg',
+    5: '/icons/icon-5.svg',
+    6: '/icons/icon-6.svg',
+    7: '/icons/icon-7.svg',
+    8: '/icons/icon-8.svg',
+  },
+  COMPANY: {
+    1: '/icons/company-logo-1.svg',
+    2: '/icons/company-logo-2.svg',
+    3: '/icons/company-logo-3.svg',
+    4: '/icons/company-logo-4.svg',
+  },
+};
+
 export const SHAPE_DATAS = ['bottom', 'top', 'bottom'] as const;

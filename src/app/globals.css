@@ -23,7 +23,7 @@
   /* Primary (Accent) Palette */
   --color-primary-100: #a9f45d;
   --color-primary-200: #88dd0e;
-  --color-primary-300: #468c01;
+  --color-primary-300: #3a6601;
   --color-primary-400: #305500;
 
   /* Base Colors */
@@ -228,6 +228,13 @@ html {
   justify-content: flex-start;
 }
 
+@utility flex-col-start {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
 /* Typography */
 @utility title {
   @apply text-display-md-extrabold md:text-display-xl-extrabold lg:text-display-2xl-extrabold text-neutral-25;
@@ -239,4 +246,17 @@ html {
 
 @utility desc {
   @apply text-md-medium md:text-lg-medium lg:text-xl-medium text-neutral-400;
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+
+.stripe-motion {
+  animation: moveStripes 1s linear infinite;
 }
