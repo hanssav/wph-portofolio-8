@@ -38,10 +38,7 @@ const ServiceSection = () => {
   const { desc, subTitle, title } = SECTION;
   return (
     <section
-      className={cn(
-        'base-container py-section flex flex-col',
-        'gap-3xl md:gap-5xl lg:gap-7xl'
-      )}
+      className={cn('base-container py-section content-container flex-start')}
     >
       {/* TEXT */}
       <div

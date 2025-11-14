@@ -6,8 +6,8 @@ import Image from 'next/image';
 const PortfolioSection = () => {
   const { subTitle, title } = PORTOFOLIO_SECTION;
   return (
-    <section className='py-section lg:gap-y-7xl relative flex flex-col items-center gap-6'>
-      <div className='gap-md flex max-w-[74.35vw] flex-col justify-center text-center md:max-w-full'>
+    <section className='py-section content-container relative'>
+      <div className='content-header-center'>
         <p className='sub-title'>{subTitle}</p>
         <h1 className='title'>{title}</h1>
       </div>

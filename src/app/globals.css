@@ -199,6 +199,14 @@ html {
   @apply max-w-302 px-4 py-10;
 }
 
+@utility content-container {
+  @apply lg:gap-y-7xl md:gap-5xl flex flex-col items-center gap-6;
+}
+
+@utility content-header-center {
+  @apply gap-md flex max-w-[74.35vw] flex-col justify-center text-center md:max-w-full;
+}
+
 @utility py-section {
   /* padding-top: 40px;
   padding-bottom: 40px; */
@@ -246,6 +254,10 @@ html {
 
 @utility desc {
   @apply text-md-medium md:text-lg-medium lg:text-xl-medium text-neutral-400;
+}
+
+@utility form-label {
+  @apply text-sm-semibold md:text-md-semibold text-neutral-25;
 }
 
 @keyframes moveStripes {
