@@ -7,14 +7,14 @@ export const WORK_SECTION: SectionData = {
   desc: '',
 };
 
-type Experience = {
+export type WorkType = {
   year: string;
   title: string;
   description: string;
   img: string;
 };
 
-export const WORK_DATA: Experience[] = [
+export const WORK_DATA: WorkType[] = [
   {
     year: '2020 - 2022',
     title: 'Frontend Developer 1',

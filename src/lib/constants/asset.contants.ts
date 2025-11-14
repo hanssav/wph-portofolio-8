@@ -5,6 +5,15 @@ export const IMAGES = {
     2: '/images/portfolio/portfolio-2.png',
     3: '/images/portfolio/portfolio-3.png',
   },
+
+  PORTOFOLIO_SECTION: {
+    1: '/images/portfolio-1.png',
+    2: '/images/portfolio-2.png',
+    3: '/images/portfolio-3.png',
+    4: '/images/portfolio-4.png',
+    5: '/images/portfolio-5.png',
+    6: '/images/portfolio-6.png',
+  },
 };
 
 export const ICONS = {

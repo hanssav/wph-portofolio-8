@@ -96,7 +96,7 @@ const ExperienceSection = () => {
   const { title, subTitle } = SECTION;
 
   return (
-    <section className='base-container py-section lg:gap-6xl flex flex-col gap-6 lg:items-center'>
+    <section className='base-container py-section lg:gap-y-6xl flex flex-col gap-6 lg:items-center'>
       <div className='gap-md flex flex-col justify-center text-center'>
         <p className='sub-title'>{subTitle}</p>
         <h1 className='title'>{title}</h1>
