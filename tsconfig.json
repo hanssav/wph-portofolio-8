@@ -28,7 +28,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/lib/constants/animation/text-group-animation.ts",
+    "src/lib/theme/generate-typography.js",
+    "src/lib/theme/generate-typography.js"
   ],
   "exclude": ["node_modules"]
 }

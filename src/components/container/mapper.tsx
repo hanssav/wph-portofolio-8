@@ -1,4 +1,4 @@
-type MapperProps<T> = {
+export type MapperProps<T> = {
   data: readonly T[] | T[];
   className?: string;
   children: (item: T, index: number) => React.ReactNode;

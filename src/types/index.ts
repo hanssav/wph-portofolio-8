@@ -4,4 +4,9 @@ type SectionData = {
   desc: string;
 };
 
-export type { SectionData };
+type BaseComponent = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+export type { SectionData, BaseComponent };
