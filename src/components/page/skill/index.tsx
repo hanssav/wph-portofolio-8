@@ -1,25 +1,20 @@
 import { SKILL_SECTION, SKILLS_DATA, SKILLS_LOGO } from '@/lib/constants/pages';
-import { motion } from 'motion/react';
-import { childTextAnimation, textAnimation } from '@/lib/constants/animation';
 import { SkillImage, SkillLogo, SkillLogoItem } from './partials/skill-logo';
 import { SKillPercent, SkillPercentItems } from './partials/skill-percent';
+import { Section } from '@/components/container';
 
 const SkillsSection = () => {
-  const { title, subTitle } = SKILL_SECTION;
+  const { title, subTitle, id } = SKILL_SECTION;
   return (
-    <section className='base-container py-section flex flex-col gap-10 lg:flex-row'>
-      <motion.div
-        {...textAnimation}
-        className='flex-col-start flex-1 gap-6 lg:gap-14'
-      >
-        <div className='space-y-md'>
-          <motion.p variants={childTextAnimation} className='sub-title'>
-            {subTitle}
-          </motion.p>
-          <motion.h1 variants={childTextAnimation} className='title'>
-            {title}
-          </motion.h1>
-        </div>
+    <Section.Root
+      id={id}
+      className='base-container flex flex-wrap overflow-hidden lg:gap-[58px]'
+    >
+      <div className='flex-col-start flex-1 basis-80 gap-6 lg:gap-14'>
+        <Section.Content align='start'>
+          <Section.SubTitle>{subTitle}</Section.SubTitle>
+          <Section.Title> {title}</Section.Title>
+        </Section.Content>
         <SkillLogo>
           {SKILLS_LOGO.map((item) => (
             <SkillLogoItem key={item.id}>
@@ -27,13 +22,13 @@ const SkillsSection = () => {
             </SkillLogoItem>
           ))}
         </SkillLogo>
-      </motion.div>
+      </div>
       <SKillPercent>
         {SKILLS_DATA.map((skill, idx) => (
           <SkillPercentItems skill={skill} id={idx} key={skill.id} />
         ))}
       </SKillPercent>
-    </section>
+    </Section.Root>
   );
 };
 

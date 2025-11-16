@@ -2,6 +2,7 @@ import { SectionData } from '@/types';
 import { ICONS } from '../asset.contants';
 
 export const WORK_SECTION: SectionData = {
+  id: 'experience',
   subTitle: 'EXPERIENCE',
   title: 'PROFESIONAL WORK',
   desc: '',

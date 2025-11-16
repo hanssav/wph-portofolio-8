@@ -7,19 +7,23 @@ import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Circle, Dot, Dribbble, Instagram, Linkedin } from 'lucide-react';
-import { Mapper, Shapes } from '../container';
+import { Mapper, Section, Shapes } from '../container';
 
 const CONTACT_SECTION: SectionData = {
+  id: 'contact',
   title: 'LET’S GET IN TOUCH',
   subTitle: 'CONTACT',
   desc: '',
 };
 
 const ContactSection = () => {
-  const { title, subTitle } = CONTACT_SECTION;
+  const { title, subTitle, id } = CONTACT_SECTION;
   return (
+    // <Section.Root
+    //   id={id}
+    //   className='relative pb-10 md:border-t md:border-neutral-800 md:py-20 lg:py-[120px]'
+    // >
     <div className='relative pb-10 md:border-t md:border-neutral-800 md:py-20 lg:py-[120px]'>
-      {/* Shape */}
       <Shapes className='right-0 bottom-0 z-20' />
       <Shapes className='top-0 left-0 z-20 rotate-180' />
 
@@ -110,6 +114,7 @@ const ContactSection = () => {
         </div>
       </div>
     </div>
+    // </Section.Root>
   );
 };
 

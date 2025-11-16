@@ -3,6 +3,7 @@ import { IMAGES } from '../asset.contants';
 import { MotionProps, type Variants } from 'motion/react';
 
 export const ABOUT_SECTION: SectionData = {
+  id: 'about-me',
   title: 'CRAFTING SEAMLESS HIGH-PERFORMANCE WEB EXPERIENCES',
   desc: `I love turning designs into interactive, high-performance websites. 
   With a keen eye for detail and a deep understanding of frontend technologies,
@@ -28,11 +29,10 @@ export const figure8Animation: Partial<MotionProps> = {
   transition: {
     duration: 18,
     repeat: Infinity,
-    repeatType: "mirror",
+    repeatType: 'mirror',
     ease: [0.42, 0, 0.58, 1], // cubic-bezier easeInOut
   },
 };
-
 
 export const orbitAnimation: Partial<MotionProps> = {
   animate: {
@@ -43,11 +43,10 @@ export const orbitAnimation: Partial<MotionProps> = {
   transition: {
     duration: 16,
     repeat: Infinity,
-    repeatType: "mirror",
-    ease: "easeInOut",
+    repeatType: 'mirror',
+    ease: 'easeInOut',
   },
 };
-
 
 export const waveAnimation: Partial<MotionProps> = {
   animate: {
@@ -62,7 +61,6 @@ export const waveAnimation: Partial<MotionProps> = {
     ease: [0.42, 0, 0.58, 1],
   },
 };
-
 
 export const ABOUT_IMAGE: AboutImageType[] = [
   {

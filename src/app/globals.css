@@ -200,7 +200,7 @@ html {
 }
 
 @utility content-container {
-  @apply lg:gap-y-7xl md:gap-5xl flex flex-col items-center gap-6;
+  @apply lg:gap-7xl md:gap-5xl flex items-center gap-10;
 }
 
 @utility content-header-center {

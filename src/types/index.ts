@@ -1,4 +1,5 @@
 type SectionData = {
+  id: string;
   title: string;
   subTitle: string;
   desc: string;

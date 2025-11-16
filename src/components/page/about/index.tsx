@@ -1,4 +1,4 @@
-import { Mapper, Shapes } from '../../container';
+import { Mapper, Section, Shapes } from '../../container';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { ABOUT_IMAGE, ABOUT_SECTION } from '@/lib/constants/pages';
@@ -6,35 +6,25 @@ import { motion } from 'motion/react';
 import { childTextAnimation, textAnimation } from '@/lib/constants/animation';
 
 const AboutSection = () => {
-  const { desc, subTitle, title } = ABOUT_SECTION;
+  const { desc, subTitle, title, id } = ABOUT_SECTION;
   const highlight = 'HIGH-PERFORMANCE WEB';
   const parts = title.split(highlight);
 
   return (
-    <section className='py-section relative flex flex-col text-center'>
-      <Shapes className='bottom-0 -left-6 z-20 -translate-y-4/5 rotate-90' />
-
-      <motion.div
-        {...textAnimation}
-        className='base-container space-y-xl lg:space-y-7xl relative z-30'
-      >
-        <motion.div className='lg:space-y-xl mx-auto max-w-[871px]'>
-          <motion.p variants={childTextAnimation} className='sub-title'>
-            {subTitle}
-          </motion.p>
-          <motion.h1 variants={childTextAnimation} className='title'>
+    <Section.Root id={id} className='relative flex-col text-center'>
+      <div className='base-container space-y-xl lg:space-y-7xl z-30'>
+        <Section.Content className='lg:space-y-xl'>
+          <Section.SubTitle>{subTitle}</Section.SubTitle>
+          <Section.Title>
             {parts[0]}
             <span className='text-primary inline md:block'>{highlight}</span>
             {parts[1]}
-          </motion.h1>
-        </motion.div>
+          </Section.Title>
+        </Section.Content>
         <motion.div className='mx-auto lg:max-w-[996px]'>
-          <motion.p variants={childTextAnimation} className='desc'>
-            {desc}
-          </motion.p>
+          <Section.Desc>{desc}</Section.Desc>
         </motion.div>
-      </motion.div>
-
+      </div>
       <Mapper
         data={ABOUT_IMAGE}
         className={cn(
@@ -63,7 +53,8 @@ const AboutSection = () => {
           </motion.div>
         )}
       </Mapper>
-    </section>
+      <Shapes className='bottom-0 -left-6 z-20 -translate-y-4/5 rotate-90' />
+    </Section.Root>
   );
 };
 

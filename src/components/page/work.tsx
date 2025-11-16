@@ -1,5 +1,5 @@
 import { WORK_DATA, WORK_SECTION, WorkType } from '@/lib/constants/pages';
-import { Mapper, Shapes } from '../container';
+import { Mapper, Section, Shapes } from '../container';
 import { Card } from '../ui/card';
 import Image from 'next/image';
 import React from 'react';
@@ -37,17 +37,16 @@ const CardContent: React.FC<{ work: WorkType; className?: string }> = ({
 );
 
 const WorkSection = () => {
-  const { subTitle, title } = WORK_SECTION;
+  const { subTitle, title, id } = WORK_SECTION;
 
   return (
-    <section className='py-section content-container relative'>
+    <Section.Root
+      id={id}
+      title={title}
+      subTitle={subTitle}
+      className='content-container relative flex-col'
+    >
       <Shapes className='-right-6 bottom-0 z-20 -rotate-90' />
-
-      <div className='content-header-center'>
-        <p className='sub-title'>{subTitle}</p>
-        <h1 className='title'>{title}</h1>
-      </div>
-
       <Mapper
         data={WORK_DATA}
         className='base-container gap-xl lg:gap-7xl grid grid-cols-[2.5rem_auto] lg:grid-cols-[auto_2.5rem_auto]'
@@ -105,7 +104,7 @@ const WorkSection = () => {
           </React.Fragment>
         )}
       </Mapper>
-    </section>
+    </Section.Root>
   );
 };
 

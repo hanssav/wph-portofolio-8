@@ -2,6 +2,7 @@ import { SectionData } from '@/types';
 import { IMAGES } from '../asset.contants';
 
 export const PORTOFOLIO_SECTION: SectionData = {
+  id: 'portfolio',
   subTitle: 'PORTFOLIO',
   title: 'SELECTED WORK',
   desc: '',

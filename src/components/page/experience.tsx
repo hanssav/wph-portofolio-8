@@ -1,12 +1,13 @@
 import { IMAGES } from '@/lib/constants';
 import { SectionData } from '@/types';
-import { Mapper } from '../container';
+import { Mapper, Section } from '../container';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 import SparkleIcon from '../ui/sparkle';
 
-const SECTION: SectionData = {
+const EXPERIENCE_SECTION: SectionData = {
+  id: 'working',
   subTitle: 'WORKING',
   title: 'WHY CHOOSE ME?',
   desc: '',
@@ -68,15 +69,15 @@ const ExperienceItem: React.FC<{ skill: string; isMe: boolean }> = ({
 };
 
 const ExperienceSection = () => {
-  const { title, subTitle } = SECTION;
+  const { title, subTitle, id } = EXPERIENCE_SECTION;
 
   return (
-    <section className='base-container py-section lg:gap-y-6xl flex flex-col gap-6 lg:items-center'>
-      <div className='gap-md flex flex-col justify-center text-center'>
-        <p className='sub-title'>{subTitle}</p>
-        <h1 className='title'>{title}</h1>
-      </div>
-
+    <Section.Root
+      id={id}
+      title={title}
+      subTitle={subTitle}
+      className='base-container flex-col lg:items-center'
+    >
       <Mapper
         data={WORKING_WITH_ME_DATA}
         className='lg:gap-8xl flex w-full flex-col gap-12 lg:flex-row'
@@ -108,7 +109,7 @@ const ExperienceSection = () => {
       </Mapper>
 
       <Button className='w-full md:max-w-60 md:p-2'>HIRE ME</Button>
-    </section>
+    </Section.Root>
   );
 };
 

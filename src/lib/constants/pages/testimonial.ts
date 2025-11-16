@@ -1,6 +1,7 @@
 import { SectionData } from '@/types';
 
 export const TESTIMONIAL_SECTION: SectionData = {
+  id: 'testimonials',
   subTitle: 'TESTIMONIALS',
   title: 'PEOPLE SAYS ABOUT ME',
   desc: '',

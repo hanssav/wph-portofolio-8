@@ -1,17 +1,17 @@
 import { PORTFOLIO_DATA, PORTOFOLIO_SECTION } from '@/lib/constants/pages';
 import { cn } from '@/lib/utils';
-import { Mapper } from '../container';
+import { Mapper, Section } from '../container';
 import Image from 'next/image';
 
 const PortfolioSection = () => {
-  const { subTitle, title } = PORTOFOLIO_SECTION;
+  const { subTitle, title, id } = PORTOFOLIO_SECTION;
   return (
-    <section className='py-section content-container relative'>
-      <div className='content-header-center'>
-        <p className='sub-title'>{subTitle}</p>
-        <h1 className='title'>{title}</h1>
-      </div>
-
+    <Section.Root
+      id={id}
+      title={title}
+      subTitle={subTitle}
+      className='content-container relative flex-col'
+    >
       <Mapper
         data={PORTFOLIO_DATA}
         className={cn(
@@ -40,7 +40,7 @@ const PortfolioSection = () => {
           </div>
         )}
       </Mapper>
-    </section>
+    </Section.Root>
   );
 };
 

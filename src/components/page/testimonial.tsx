@@ -1,20 +1,20 @@
 import { TESTIMONIAL_DATA, TESTIMONIAL_SECTION } from '@/lib/constants/pages';
 import { Card } from '../ui/card';
 import Image from 'next/image';
-import { Mapper } from '../container';
+import { Mapper, Section } from '../container';
 import { cn } from '@/lib/utils';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import { Button } from '../ui/button';
 
 const TestimonialSection = () => {
-  const { subTitle, title } = TESTIMONIAL_SECTION;
+  const { subTitle, title, id } = TESTIMONIAL_SECTION;
   return (
-    <section className='py-section content-container'>
-      <div className='content-header-center'>
-        <p className='sub-title'>{subTitle}</p>
-        <h1 className='title'>{title}</h1>
-      </div>
-
+    <Section.Root
+      id={id}
+      title={title}
+      subTitle={subTitle}
+      className='content-container flex-col'
+    >
       <div className='space-y-5xl'>
         <Mapper
           data={TESTIMONIAL_DATA}
@@ -81,7 +81,7 @@ const TestimonialSection = () => {
           </Button>
         </div>
       </div>
-    </section>
+    </Section.Root>
   );
 };
 

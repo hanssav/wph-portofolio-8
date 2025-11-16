@@ -1,6 +1,7 @@
 import { SectionData } from '@/types';
 
 export const SERVICE_SECTION: SectionData = {
+  id: 'service',
   title: 'MY SERVICE EXPERTISE',
   subTitle: 'SERVICE',
   desc: `Creating modern, intuitive, and visually consistent web experiences 

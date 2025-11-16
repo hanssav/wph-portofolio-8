@@ -1,6 +1,6 @@
 import { FAQ, FAQ_DATA, FAQ_SECTION } from '@/lib/constants/pages';
 import React from 'react';
-import { Mapper } from '../container';
+import { Mapper, Section } from '../container';
 import SparkleIcon from '../ui/sparkle';
 
 type SeparatorItem = {
@@ -11,7 +11,7 @@ type SeparatorItem = {
 type GridItem = FAQ | SeparatorItem;
 
 const FaqSection = () => {
-  const { subTitle, title } = FAQ_SECTION;
+  const { subTitle, title, id } = FAQ_SECTION;
 
   const itemsWithSeparators: GridItem[] = [];
 
@@ -24,12 +24,12 @@ const FaqSection = () => {
   });
 
   return (
-    <section className='py-section content-container'>
-      <div className='content-header-center'>
-        <p className='sub-title'>{subTitle}</p>
-        <h1 className='title'>{title}</h1>
-      </div>
-
+    <Section.Root
+      id={id}
+      title={title}
+      subTitle={subTitle}
+      className='content-container flex-col'
+    >
       <Mapper
         data={itemsWithSeparators}
         className='base-container grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6 lg:gap-8'
@@ -77,7 +77,7 @@ const FaqSection = () => {
           );
         }}
       </Mapper>
-    </section>
+    </Section.Root>
   );
 };
 

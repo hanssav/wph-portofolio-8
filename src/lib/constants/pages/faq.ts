@@ -1,6 +1,7 @@
 import { SectionData } from '@/types';
 
 export const FAQ_SECTION: SectionData = {
+  id: 'faq',
   subTitle: 'FAQ',
   title: 'FREQUENTLY ASKED QUESTIONS',
   desc: '',

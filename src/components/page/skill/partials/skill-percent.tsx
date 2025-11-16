@@ -25,7 +25,10 @@ export const SKillPercent: React.FC<BaseComponent> = ({
       whileInView={'animate'}
       viewport={{ once: true, amount: 'some' }}
       variants={skillVariants}
-      className={cn('flex-col-start lg:gap-3xl gap-xl flex-1', className)}
+      className={cn(
+        'flex-col-start lg:gap-3xl gap-xl flex-1 basis-80',
+        className
+      )}
     >
       {children}
     </motion.div>
