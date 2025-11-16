@@ -20,44 +20,49 @@ type AboutImageType = {
 
 export const figure8Animation: Partial<MotionProps> = {
   animate: {
-    x: [0, 15, 0, -15, 0],
-    y: [0, -15, -30, -15, 0],
-    rotate: [0, 5, 0, -5, 0],
-    scale: [1, 1.05, 1, 1.05, 1],
+    x: [0, 12, 20, 12, 0, -12, -20, -12, 0],
+    y: [0, -12, -40, -70, -40, -12, 0],
+    rotate: [0, 3, 6, 3, 0, -3, -6, -3, 0],
+    scale: [1, 1.03, 1.06, 1.03, 1, 1.03, 1.06, 1.03, 1],
   },
   transition: {
-    duration: 12,
+    duration: 18,
     repeat: Infinity,
-    ease: 'easeInOut',
+    repeatType: "mirror",
+    ease: [0.42, 0, 0.58, 1], // cubic-bezier easeInOut
   },
 };
+
 
 export const orbitAnimation: Partial<MotionProps> = {
   animate: {
-    x: [0, 20, 0, -20, 0],
-    y: [0, -10, -20, -10, 0],
-    rotate: [0, 10, 0, -10, 0],
+    x: [0, 10, 20, 10, 0, -10, -20, -10, 0],
+    y: [0, -25, -45, -60, -45, -25, 0],
+    rotate: [0, 6, 12, 6, 0, -6, -12, -6, 0],
   },
   transition: {
-    duration: 10,
+    duration: 16,
     repeat: Infinity,
-    ease: 'linear',
+    repeatType: "mirror",
+    ease: "easeInOut",
   },
 };
 
+
 export const waveAnimation: Partial<MotionProps> = {
   animate: {
-    y: [0, -25, 0, 25, 0],
-    x: [0, 10, 0, -10, 0],
-    rotate: [0, 7, 0, -7, 0],
-    scale: [1, 1.03, 1, 1.03, 1],
+    y: [0, -15, -25, -35, -25, -15, 0, 15, 25, 15, 0],
+    x: [0, 6, 12, 6, 0, -6, -12, -6, 0],
+    rotate: [0, 3, 7, 3, 0, -3, -7, -3, 0],
+    scale: [1, 1.02, 1.04, 1.02, 1, 1.02, 1.04, 1.02, 1],
   },
   transition: {
-    duration: 11,
+    duration: 20,
     repeat: Infinity,
-    ease: 'easeInOut',
+    ease: [0.42, 0, 0.58, 1],
   },
 };
+
 
 export const ABOUT_IMAGE: AboutImageType[] = [
   {
