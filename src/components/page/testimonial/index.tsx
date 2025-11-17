@@ -4,30 +4,31 @@ import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import { Button } from '../../ui/button';
 import { TestimonialCardItem, TestimonialCards } from './partials';
 import { motion, MotionProps } from 'motion/react';
+import React from 'react';
 
 const MotionButton = motion(Button);
 
-const buttonAnimation: (delay: number) => MotionProps = (delay) => ({
+const buttonAnimation = (delay: number, isIntroDone: boolean): MotionProps => ({
   initial: { opacity: 0, scale: 0.85 },
   whileInView: {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: delay * 0.8,
+      delay: isIntroDone ? 0 : delay * 0.8,
       duration: 0.6,
       ease: [0.25, 0.1, 0.25, 1],
     },
   },
-  whileHover: { scale: 1.1, transition: { duration: 0.2 } },
-  whileTap: {
-    scale: 0.95,
-    transition: { duration: 0.2 },
-  },
+
+  whileHover: { scale: 1.1, transition: { duration: 0.15 } },
+  whileTap: { scale: 0.95, transition: { duration: 0.1 } },
   viewport: { once: true },
 });
 
 const TestimonialSection = () => {
   const { subTitle, title, id } = TESTIMONIAL_SECTION;
+  const [isIntroDone, setIsIntroDone] = React.useState(false);
+
   return (
     <Section.Root
       id={id}
@@ -41,11 +42,13 @@ const TestimonialSection = () => {
             <TestimonialCardItem idx={idx} testimonial={testimonial} />
           ))}
         </TestimonialCards>
+
         <motion.div className='flex-center gap-xl'>
           <MotionButton
             variant='outline'
             className='aspect-square size-[48px] md:size-14'
-            {...buttonAnimation(1)}
+            {...buttonAnimation(1, isIntroDone)}
+            onAnimationComplete={() => setIsIntroDone(true)}
           >
             <ArrowLeft className='size-4 text-neutral-800 md:size-6' />
           </MotionButton>
@@ -53,7 +56,8 @@ const TestimonialSection = () => {
           <MotionButton
             variant='outline'
             className='aspect-square size-[48px] md:size-14'
-            {...buttonAnimation(1.2)}
+            {...buttonAnimation(1.2, isIntroDone)}
+            onAnimationComplete={() => setIsIntroDone(true)}
           >
             <ArrowRight className='text-primary size-4 md:size-6' />
           </MotionButton>
