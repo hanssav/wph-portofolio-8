@@ -8,8 +8,6 @@ type SectionWrapperType = {
   id: string;
   title?: string;
   subTitle?: string;
-  desc?: string;
-  align?: ContentAlignType;
 } & BaseComponent;
 
 const SectionWrapper: React.FC<SectionWrapperType> = ({
@@ -18,8 +16,6 @@ const SectionWrapper: React.FC<SectionWrapperType> = ({
   title,
   subTitle,
   id,
-  align = 'center',
-  desc,
 }) => {
   const renderContent = () => {
     if (!!title)

@@ -1,13 +1,12 @@
 import { SectionData } from '@/types';
-import React from 'react';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import { Circle, Dot, Dribbble, Instagram, Linkedin } from 'lucide-react';
-import { Mapper, Section, Shapes } from '../container';
+import { Circle, Dribbble, Instagram, Linkedin } from 'lucide-react';
+import { Mapper, Shapes } from '../container';
 
 const CONTACT_SECTION: SectionData = {
   id: 'contact',

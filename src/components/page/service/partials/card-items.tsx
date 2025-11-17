@@ -6,35 +6,17 @@ import { ServiceData } from '@/lib/constants/pages';
 
 const MotionMonitor = motion(Monitor);
 
-type CardVariantsFn = (hasAnimate: boolean, idx: number) => Variants;
-
-const cardVariants: CardVariantsFn = (hasAnimate: boolean, idx: number) => ({
-  initial: { y: 30, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1],
-      delay: hasAnimate ? 0.8 + 0.3 * idx : 0,
-    },
-  },
+const cardVariants: Variants = {
   hover: {
     y: -4,
     transition: {
       duration: 0.3,
-      delay: 0,
       staggerChildren: 0.05,
     },
   },
-});
+};
 
 const borderVariants: Variants = {
-  initial: { opacity: 0, x: -10 },
-  animate: {
-    opacity: 1,
-    x: 0,
-  },
   hover: {
     x: 5,
     borderColor: 'rgba(167, 243, 208, 0.3)',
@@ -42,11 +24,6 @@ const borderVariants: Variants = {
 };
 
 const iconVariants: Variants = {
-  initial: { scale: 0, rotate: -90 },
-  animate: {
-    scale: 1,
-    rotate: 0,
-  },
   hover: {
     scale: 1.15,
     rotate: 10,
@@ -59,11 +36,6 @@ const iconVariants: Variants = {
 };
 
 const titleVariants: Variants = {
-  initial: { opacity: 0, y: 10 },
-  animate: {
-    opacity: 1,
-    y: 0,
-  },
   hover: {
     x: 5,
     color: '#88dd0e',
@@ -71,10 +43,6 @@ const titleVariants: Variants = {
 };
 
 const descVariants: Variants = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-  },
   hover: {
     opacity: 0.9,
     color: '#fafafa',
@@ -85,16 +53,10 @@ export const ServiceCardItems: React.FC<{
   service: ServiceData;
   idx: number;
 }> = ({ service, idx }) => {
-  const [hasAnimate, setHasAnimate] = React.useState<boolean>(true);
-
   return (
     <motion.div
-      initial='initial'
-      whileInView='animate'
+      variants={cardVariants}
       whileHover='hover'
-      variants={cardVariants(hasAnimate, idx)}
-      onAnimationComplete={() => setHasAnimate(false)}
-      viewport={{ once: true, amount: 'some' }}
       className={cn(
         'gap-xl md:gap-3xl group flex cursor-pointer flex-col',
         'relative'

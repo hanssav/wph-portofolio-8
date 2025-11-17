@@ -17,7 +17,7 @@ export const textAnimation: Partial<MotionProps> = {
   whileInView: 'animate',
   // amount is part of element in view to trigger animatioan,
   // 0.2 is 20% and 1 is 100%/ some | all
-  viewport: { once: true, amount: 'some' },
+  viewport: { once: true, amount: 0.2 },
 };
 
 export const childTextAnimation: Variants = {
