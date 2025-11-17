@@ -1,6 +1,6 @@
 import { PORTFOLIO_DATA, PORTOFOLIO_SECTION } from '@/lib/constants/pages';
 import { cn } from '@/lib/utils';
-import { Mapper, Section } from '../container';
+import { Mapper, Section } from '../../container';
 import Image from 'next/image';
 
 const PortfolioSection = () => {
