@@ -66,6 +66,8 @@ export const baseInViewAnimation: Partial<MotionProps> = {
       transition: {
         duration: 0.5,
         ease: [0.25, 0.1, 0.25, 1],
+        delayChildren: 0.8,
+        staggerChildren: 0.3,
       },
     },
   },

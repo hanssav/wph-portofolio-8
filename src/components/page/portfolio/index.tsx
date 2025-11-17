@@ -3,25 +3,8 @@ import { cn } from '@/lib/utils';
 import { Section } from '../../container';
 import Image from 'next/image';
 
-import { motion, MotionProps, Variants } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
-
-const cardAnimation: MotionProps = {
-  ...baseInViewAnimation,
-  variants: {
-    initial: { opacity: 0, y: 30 },
-    inView: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1],
-        staggerChildren: 0.3,
-        delayChildren: 0.8,
-      },
-    },
-  },
-};
 
 const childAnimation: Variants = {
   initial: { opacity: 0, y: 20 },
@@ -63,7 +46,7 @@ const PortfolioSection = () => {
       className='content-container relative flex-col'
     >
       <motion.div
-        {...cardAnimation}
+        {...baseInViewAnimation}
         className={cn(
           'base-container lg:gap-y-6xl md:gap-x-2xl md:gap-y-4xl gap-8',
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
