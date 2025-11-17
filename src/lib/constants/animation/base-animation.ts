@@ -53,3 +53,20 @@ export const waveAnimation: Partial<MotionProps> = {
     ease: 'easeInOut',
   },
 };
+
+export const baseInViewAnimation: Partial<MotionProps> = {
+  initial: 'initial',
+  whileInView: 'inView',
+  viewport: { once: true },
+  variants: {
+    initial: { opacity: 0, y: 30 },
+    inView: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  },
+};
