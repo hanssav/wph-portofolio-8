@@ -1,4 +1,4 @@
-import { MotionProps, Variants } from 'motion/react';
+import { MotionProps } from 'motion/react';
 
 export const floatAnimation: Partial<MotionProps> = {
   animate: {
