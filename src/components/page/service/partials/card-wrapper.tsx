@@ -1,20 +1,11 @@
+import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'motion/react';
 import React from 'react';
 
-const containerVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.8,
-    },
-  },
-};
-
 const itemWrapperVariants: Variants = {
   initial: { y: 30, opacity: 0 },
-  animate: {
+  inView: {
     y: 0,
     opacity: 1,
     transition: {
@@ -30,10 +21,7 @@ export const ServiceCard: React.FC<{
 }> = ({ children, className }) => {
   return (
     <motion.div
-      initial='initial'
-      whileInView='animate'
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
+      {...baseInViewAnimation()}
       className={cn(
         'gap-3xl lg:gap-5xl grid grid-cols-1 lg:grid-cols-3',
         className

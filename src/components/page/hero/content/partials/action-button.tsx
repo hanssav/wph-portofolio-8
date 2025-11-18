@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'motion/react';
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 type ActionButtonType = {
   label: string;

@@ -7,9 +7,9 @@ import { cn } from '@/lib/utils';
 import React from 'react';
 import { MenuIcon, NavList } from './partials';
 
-const MotionButton = motion(Button);
-const MotionMenuIcon = motion(MenuIcon);
-const MotionXIcon = motion(X);
+const MotionButton = motion.create(Button);
+const MotionMenuIcon = motion.create(MenuIcon);
+const MotionXIcon = motion.create(X);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -25,6 +25,8 @@ const Navbar = () => {
     [0, 100],
     ['blur(0px)', 'blur(10px)']
   );
+
+  const handleMenuClose = () => setIsOpen(false);
 
   return (
     <motion.header
@@ -84,7 +86,7 @@ const Navbar = () => {
               </SheetTrigger>
             </SheetTrigger>
             <SheetContent className='base-container mt-20 border border-t border-neutral-800'>
-              <NavList />
+              <NavList onItemClick={handleMenuClose} />
             </SheetContent>
           </Sheet>
         </nav>

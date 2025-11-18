@@ -29,7 +29,7 @@ export const buttonVariants = {
   tap: { scale: 1, opacity: 0.9 },
 };
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const ContactSection = () => {
   const { title, subTitle, id } = CONTACT_SECTION;
@@ -49,7 +49,7 @@ const ContactSection = () => {
       id={id}
       className='relative pb-10 md:border-t md:border-neutral-800 md:py-20 lg:py-[120px]'
     >
-      <Shapes className='right-0 bottom-0 z-20' />
+      <Shapes className='right-0 -bottom-10 left-auto z-20' />
       <Shapes className='top-0 left-0 z-20 rotate-180' />
 
       <div className='base-container gap-3xl flex flex-wrap overflow-hidden lg:gap-[122px]'>

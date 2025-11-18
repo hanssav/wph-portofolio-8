@@ -8,7 +8,7 @@ import { ExperienceItem } from './partials';
 import { motion, MotionProps, type Variants } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const buttonAnimation: MotionProps = {
   ...baseInViewAnimation(),

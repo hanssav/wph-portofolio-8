@@ -3,7 +3,10 @@ import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 
-export const NavList: React.FC<{ className?: string }> = ({ className }) => (
+export const NavList: React.FC<{
+  className?: string;
+  onItemClick?: () => void;
+}> = ({ className, onItemClick }) => (
   <ul className={cn('flex flex-col gap-8 py-4', className)}>
     {navItems.map(({ href, label }, idx) => (
       <motion.li
@@ -16,6 +19,7 @@ export const NavList: React.FC<{ className?: string }> = ({ className }) => (
           <Link
             className='text-md-regular hover:text-primary relative block transition-colors duration-300'
             href={href}
+            onClick={onItemClick}
           >
             {label}
             <motion.span

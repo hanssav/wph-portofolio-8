@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Monitor } from 'lucide-react';
 import { ServiceData } from '@/lib/constants/pages';
 
-const MotionMonitor = motion(Monitor);
+const MotionMonitor = motion.create(Monitor);
 
 const cardVariants: Variants = {
   hover: {

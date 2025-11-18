@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const IconCard: React.FC<{ icon: LucideIcon }> = ({ icon }) => {
   const Icon = icon;

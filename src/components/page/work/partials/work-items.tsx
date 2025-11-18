@@ -9,7 +9,7 @@ const cardVariants = (isEven: boolean): Variants => ({
     opacity: 0,
     x: isEven ? 50 : -50,
   },
-  animate: {
+  inView: {
     opacity: 1,
     x: 0,
     transition: {
@@ -24,7 +24,7 @@ const timelineVariants: Variants = {
     opacity: 0,
     scaleY: 0,
   },
-  animate: {
+  inView: {
     opacity: 1,
     scaleY: 1,
     transition: {
@@ -39,7 +39,7 @@ const badgeVariants: Variants = {
     opacity: 0,
     scale: 0,
   },
-  animate: {
+  inView: {
     opacity: 1,
     scale: 1,
     transition: {

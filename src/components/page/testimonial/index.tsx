@@ -6,7 +6,7 @@ import { TestimonialCardItem, TestimonialCards } from './partials';
 import { motion, MotionProps } from 'motion/react';
 import React from 'react';
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const buttonAnimation = (delay: number, isIntroDone: boolean): MotionProps => ({
   initial: { opacity: 0, scale: 0.85 },

@@ -13,9 +13,9 @@ const imageData: ImageDataType = {
   className: 'object-cover grayscale',
 };
 
-const MotionCard = motion(Card);
-const MotionMapper = motion(Mapper);
-const MotionStarIcon = motion(Star);
+const MotionCard = motion.create(Card);
+const MotionMapper = motion.create(Mapper);
+const MotionStarIcon = motion.create(Star);
 
 const starIconVariant: Variants = {
   initial: { scale: 0, opacity: 0, rotate: -90 },

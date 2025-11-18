@@ -10,7 +10,7 @@ interface TestimonialCardItemProps {
   idx: number;
 }
 
-const MotionCard = motion(Card);
+const MotionCard = motion.create(Card);
 
 const TestimonialCardItem: React.FC<TestimonialCardItemProps> = ({
   testimonial,
@@ -37,7 +37,8 @@ const TestimonialCardItem: React.FC<TestimonialCardItemProps> = ({
             src={testimonial.img}
             alt={testimonial.name}
             priority
-            objectFit='contain'
+            className='object-contain'
+            // objectFit='contain'
           />
         </div>
       </div>

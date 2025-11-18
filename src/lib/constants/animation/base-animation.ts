@@ -57,7 +57,7 @@ export const waveAnimation: Partial<MotionProps> = {
 export const baseInViewAnimation: (
   staggerChildren?: number,
   delayChildren?: number
-) => Partial<MotionProps> = (staggerChildren = 0.3, delayChildren = 0.8) => ({
+) => Partial<MotionProps> = (staggerChildren = 0.3, delayChildren = 0.6) => ({
   initial: 'initial',
   whileInView: 'inView',
   viewport: { once: true },

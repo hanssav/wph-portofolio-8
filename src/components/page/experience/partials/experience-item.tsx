@@ -73,6 +73,7 @@ const ExperienceItem: React.FC<{ item: ExperienceDataType }> = ({ item }) => {
           alt={item.title}
           priority
           className='object-cover'
+          sizes='60px'
         />
       </motion.div>
 

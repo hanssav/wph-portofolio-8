@@ -12,7 +12,7 @@ const WorkSection = () => {
       subTitle={subTitle}
       className='content-container relative flex-col'
     >
-      <Shapes className='-right-6 bottom-0 z-20 -rotate-90' />
+      <Shapes className='-right-6 bottom-0 left-auto z-20 -rotate-90' />
       <WorkItemWrapper>
         {WORK_DATA.map((work, idx) => (
           <WorkItems

@@ -2,6 +2,7 @@ import { SectionData } from '@/types';
 import { ICONS } from '../asset.contants';
 
 export const SKILL_SECTION: SectionData = {
+  id: 'skills',
   subTitle: 'SKILLS',
   title: 'SKILLS THAT BRING IDEAS TO LIFE',
   desc: '',

@@ -47,6 +47,7 @@ const AboutSection = () => {
               src={item.images}
               fill
               alt={item.name}
+              sizes={item.imageSizes}
               priority
               className='object-contain'
             />

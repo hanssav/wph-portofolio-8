@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { BackgroundImageType } from '../../types';
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 
 const BackgroundImage: React.FC<BackgroundImageType> = ({
   className,
@@ -30,6 +30,8 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         alt={imageData.title}
         fill
         className={cn(imageData.className)}
+        sizes='(max-width: 768px) 100vw,
+           (min-width: 768px) 46vw'
       />
       <div className='absolute bottom-0 z-30 w-full px-4 py-10'>{children}</div>
     </div>

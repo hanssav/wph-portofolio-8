@@ -16,6 +16,7 @@ type AboutImageType = {
   name: string;
   position: string;
   size?: string;
+  imageSizes: string;
   animation?: Partial<MotionProps>;
 };
 
@@ -78,6 +79,12 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       md:w-[260px] md:h-[195px]
       lg:w-[238px] lg:h-[178px]
     `,
+    imageSizes: `
+      (min-width: 1024px) 238px,
+      (min-width: 768px) 260px,
+      (min-width: 640px) 200px,
+      170px
+    `,
     animation: waveAnimation,
   },
   {
@@ -95,6 +102,12 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       md:w-[240px] md:h-[180px]
       lg:w-[250px] lg:h-[187px]
     `,
+    imageSizes: `
+      (min-width: 1024px) 250px,
+      (min-width: 768px) 240px,
+      (min-width: 640px) 180px,
+      134px
+    `,
     animation: figure8Animation,
   },
   {
@@ -111,6 +124,12 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       sm:w-[190px] sm:h-[143px]
       md:w-[250px] md:h-[188px]
       lg:w-[117px] lg:h-[88px]
+    `,
+    imageSizes: `
+      (min-width: 1024px) 117px,
+      (min-width: 768px) 250px,
+      (min-width: 640px) 190px,
+      132.5px
     `,
     animation: orbitAnimation,
   },

@@ -62,13 +62,17 @@ const PortfolioSection = () => {
               className='space-y-lg group relative cursor-pointer'
             >
               <motion.div className='relative aspect-361/270 w-full overflow-hidden rounded-2xl'>
-                <motion.div variants={imageAnimation} className='h-full w-full'>
+                <motion.div
+                  variants={imageAnimation}
+                  className='relative h-full w-full'
+                >
                   <Image
                     src={portfolio.image}
                     alt={portfolio.title}
                     fill
                     className='object-cover'
                     priority
+                    sizes='(max-width: 768px) 100vw, 50vw'
                   />
                 </motion.div>
               </motion.div>

@@ -7,10 +7,7 @@ const Shapes: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <Mapper
       data={SHAPE_DATAS}
-      className={cn(
-        'absolute bottom-0 left-0 flex h-[70px] md:h-[92px]',
-        className
-      )}
+      className={cn('absolute flex h-[70px] md:h-[92px]', className)}
     >
       {(item, i) => <Shape key={i} position={item} index={i} />}
     </Mapper>

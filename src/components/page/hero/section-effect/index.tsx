@@ -16,7 +16,7 @@ const SectionEffect = () => {
           'border-x border-neutral-800 md:block'
         )}
       />
-      <Shapes className='bottom-50 left-0 z-20 md:bottom-0' />
+      <Shapes className='bottom-1/4 left-0 z-20 md:bottom-0' />
     </>
   );
 };
