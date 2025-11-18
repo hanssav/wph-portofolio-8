@@ -24,7 +24,7 @@ const TestimonialCards: React.FC<TestimonialCardsProps> = ({
 }) => {
   return (
     <motion.div
-      {...baseInViewAnimation}
+      {...baseInViewAnimation()}
       className={cn(
         'base-container md:gap-3xl lg:gap-5xl grid grid-cols-1 gap-4 md:grid-cols-2',
         className

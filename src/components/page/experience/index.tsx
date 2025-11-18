@@ -11,7 +11,7 @@ import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 const MotionButton = motion(Button);
 
 const buttonAnimation: MotionProps = {
-  ...baseInViewAnimation,
+  ...baseInViewAnimation(),
   whileHover: {
     scale: 1.05,
     transition: { duration: 0.3 },

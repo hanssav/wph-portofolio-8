@@ -46,7 +46,7 @@ const PortfolioSection = () => {
       className='content-container relative flex-col'
     >
       <motion.div
-        {...baseInViewAnimation}
+        {...baseInViewAnimation()}
         className={cn(
           'base-container lg:gap-y-6xl md:gap-x-2xl md:gap-y-4xl gap-8',
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'

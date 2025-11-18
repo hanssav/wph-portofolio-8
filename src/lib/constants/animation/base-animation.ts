@@ -1,4 +1,4 @@
-import { MotionProps } from 'motion/react';
+import { MotionProps, Variants } from 'motion/react';
 
 export const floatAnimation: Partial<MotionProps> = {
   animate: {
@@ -54,7 +54,10 @@ export const waveAnimation: Partial<MotionProps> = {
   },
 };
 
-export const baseInViewAnimation: Partial<MotionProps> = {
+export const baseInViewAnimation: (
+  staggerChildren?: number,
+  delayChildren?: number
+) => Partial<MotionProps> = (staggerChildren = 0.3, delayChildren = 0.8) => ({
   initial: 'initial',
   whileInView: 'inView',
   viewport: { once: true },
@@ -66,9 +69,9 @@ export const baseInViewAnimation: Partial<MotionProps> = {
       transition: {
         duration: 0.5,
         ease: [0.25, 0.1, 0.25, 1],
-        delayChildren: 0.8,
-        staggerChildren: 0.3,
+        delayChildren,
+        staggerChildren,
       },
     },
   },
-};
+});
