@@ -40,15 +40,14 @@ const ContactSection = () => {
 
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
-  const [message, setMessage] = React.useState(MESSAGE.success);
+  const [message, setMessage] = React.useState(MESSAGE.SUCCESS);
 
   const onSendMessage = async () => {
     setLoading(true);
 
-    console.log('send again');
     try {
       const isSuccess = Math.floor(Math.random() * 2);
-      setMessage(isSuccess ? MESSAGE.success : MESSAGE.failed);
+      setMessage(isSuccess ? MESSAGE.SUCCESS : MESSAGE.FAILED);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setOpen(true);

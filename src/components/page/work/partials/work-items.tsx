@@ -119,7 +119,7 @@ const WorkItems: React.FC<WorkItemsProps> = ({
             onAnimationComplete={onAnimateComplete}
             className={cn(
               'line-decoration absolute top-1/2 left-1/2 h-full w-px -translate-x-1/2 bg-neutral-800',
-              'h-[calc(100%+4rem)] lg:h-[calc(100%+5rem)]'
+              'h-[calc(100%+3rem)] lg:h-[calc(100%+5rem)]'
             )}
           />
         )}

@@ -15,7 +15,7 @@ export function VerticalLines() {
   }, []);
 
   return (
-    <div className='base-container pointer-events-none absolute inset-0 hidden md:block'>
+    <div className='base-container pointer-events-none absolute inset-0 hidden md:block lg:left-[26%]'>
       {Array.from({ length: count }).map((_, i) => (
         <motion.div
           key={i}

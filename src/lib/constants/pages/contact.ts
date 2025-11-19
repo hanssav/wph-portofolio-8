@@ -57,19 +57,19 @@ export type MessageItem = {
 };
 
 export type MessageType = {
-  success: MessageItem;
-  failed: MessageItem;
+  SUCCESS: MessageItem;
+  FAILED: MessageItem;
 };
 
 export const MESSAGE = {
-  success: {
+  SUCCESS: {
     id: 'success',
     icon: ICONS.MESSAGE.SUCCESS,
     title: 'Message Sent Successfully!',
     desc: 'Thank you for reaching out. I’ll get back to you as soon as possible',
     label: 'Back To Home',
   },
-  failed: {
+  FAILED: {
     id: 'failed',
     icon: ICONS.MESSAGE.FAILED,
     title: 'Message not sent!',

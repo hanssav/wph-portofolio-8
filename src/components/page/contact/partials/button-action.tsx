@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const buttonVariants = {
   initial: { scale: 1, opacity: 1 },
