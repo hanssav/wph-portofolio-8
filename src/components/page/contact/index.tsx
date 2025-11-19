@@ -1,16 +1,28 @@
-import { Button } from '../../ui/button';
 import { IMAGES } from '@/lib/constants';
 import { Shapes } from '../../container';
 import { motion, Variants } from 'motion/react';
 import {
   BackgroundImage,
+  ButtonAction,
   ContentImage,
   FormContact,
   FormField,
+  ModalContent,
 } from './partials';
-import { CONTACT_SECTION, FORM_FIELDS } from '@/lib/constants/pages/contact';
+import {
+  CONTACT_SECTION,
+  contentImageData,
+  FORM_FIELDS,
+  imgData,
+  MESSAGE,
+} from '@/lib/constants/pages/contact';
 
-const formItemVariants: Variants = {
+import { Dialog } from '@/components/ui/dialog';
+import React from 'react';
+
+const MotionDialog = motion.create(Dialog);
+
+export const formItemVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   animate: (custom: number) => ({
     opacity: 1,
@@ -23,25 +35,26 @@ const formItemVariants: Variants = {
   }),
 };
 
-export const buttonVariants = {
-  initial: { scale: 1, opacity: 1 },
-  hover: { scale: 1.04, opacity: 0.95 },
-  tap: { scale: 1, opacity: 0.9 },
-};
-
-const MotionButton = motion.create(Button);
-
 const ContactSection = () => {
   const { title, subTitle, id } = CONTACT_SECTION;
 
-  const imgData = {
-    src: IMAGES.PHOTOS,
-    alt: 'photo-profile',
-  };
+  const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [message, setMessage] = React.useState(MESSAGE.success);
 
-  const contentImageData = {
-    name: 'Handi Irawan',
-    status: 'Available for Work',
+  const onSendMessage = async () => {
+    setLoading(true);
+
+    console.log('send again');
+    try {
+      const isSuccess = Math.floor(Math.random() * 2);
+      setMessage(isSuccess ? MESSAGE.success : MESSAGE.failed);
+
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      setOpen(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -74,20 +87,18 @@ const ContactSection = () => {
               <FormField field={field} idx={idx} key={idx} />
             ))}
 
-            <motion.div
+            <MotionDialog
+              open={open}
+              onOpenChange={setOpen}
               variants={formItemVariants}
               custom={FORM_FIELDS.length + 1}
             >
-              <MotionButton
-                className='w-full'
-                variants={buttonVariants}
-                initial='initial'
-                whileHover='hover'
-                whileTap='tap'
-              >
-                Send Message
-              </MotionButton>
-            </motion.div>
+              <ButtonAction onClick={onSendMessage}>
+                {loading ? 'Sending... ' : 'Send Message'}
+              </ButtonAction>
+
+              <ModalContent onSendMessage={onSendMessage} message={message} />
+            </MotionDialog>
           </div>
         </FormContact>
       </div>

@@ -6,6 +6,7 @@ import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import React from 'react';
 import { MenuIcon, NavList } from './partials';
+import Link from 'next/link';
 
 const MotionButton = motion.create(Button);
 const MotionMenuIcon = motion.create(MenuIcon);
@@ -52,7 +53,9 @@ const Navbar = () => {
           className='flex-start flex-1 cursor-pointer gap-2'
         >
           <div className='border-top w-full max-w-6 border border-white md:max-w-10' />
-          <h1 className='text-primary text-xl-bold'>Handi Irawan.</h1>
+          <Link href={'#'} className='cursor-pointer'>
+            <h1 className='text-primary text-xl-bold'>Handi Irawan.</h1>
+          </Link>
         </motion.div>
         <nav>
           <NavList className='md:flex-start hidden flex-row' />

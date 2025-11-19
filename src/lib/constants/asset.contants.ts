@@ -33,6 +33,10 @@ export const ICONS = {
     3: '/icons/company-logo-3.svg',
     4: '/icons/company-logo-4.svg',
   },
+  MESSAGE: {
+    FAILED: '/icons/failed-message.svg',
+    SUCCESS: '/icons/success-message.svg',
+  },
 };
 
 export const SHAPE_DATAS = ['bottom', 'top', 'bottom'] as const;
