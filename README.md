@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WPH Portfolio
+
+A polished personal site that packages career highlights, signature projects, and curated contact channels. Built with the Next.js App Router, the experience leans on motion, accessible UI primitives, and content-driven sections to keep everything fast and expressive.
+
+<p align="center">
+  <img src="./public/images/readme/desktop-preview.png" alt="Desktop preview" height="320" style="margin:0 8px;">
+  <img src="./public/images/readme/tablet-preview.png" alt="Tablet preview" height="320" style="margin:0 8px;">
+  <img src="./public/images/readme/mobile-preview.png" alt="Mobile preview" height="320" style="margin:0 8px;">
+</p>
+
+> Live demo: [wph-portofolio-8.vercel.app](https://wph-portofolio-8.vercel.app)
+
+## Tech Stack
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white" alt="Next.js" height="30">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" height="30">
+  <img src="https://img.shields.io/badge/React-149ECA?logo=react&logoColor=white" alt="React" height="30">
+  <img src="https://img.shields.io/badge/shadcn%2Fui-000000" alt="shadcn/ui" height="30">
+  <img src="https://img.shields.io/badge/Radix%20UI-161618?logo=radix-ui&logoColor=white" alt="Radix UI" height="30">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38BDF8?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" height="30">
+  <img src="https://img.shields.io/badge/Motion-000000?logo=framer&logoColor=white" alt="Motion" height="30">
+  <img src="https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint" height="30">
+  <img src="https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black" alt="Prettier" height="30">
+</p>
+
+## Highlights
+
+- Story-driven layout with dedicated work, experience, and contact flows
+- Motion-based micro-interactions powered by `motion` keep sections lively
+- shadcn/ui surfaces layered on Radix primitives ensure accessible dialogs and selects
+- Tailwind CSS 4.0 pipeline with custom typography utilities generated at build-time
+- Centralized content constants make portfolio refreshes a copy-only task
+
+## Page Modules
+
+- **Work** – Grid of case studies with detail cards sourced from `src/lib/constants/pages/work.ts`
+- **Experience** – Timeline-inspired list that reuses shared item components
+- **Contact** – Structured list of channels, embedded map card, and CTA copy
+
+## Architecture Overview
+
+```
+src/
+├── app/                       # Next.js App Router entry points
+├── components/
+│   └── page/
+│       ├── work/              # Work section and cards
+│       ├── experience/        # Experience list + item primitives
+│       └── contact/           # Contact hero, list, and blocks
+└── lib/
+    ├── constants/             # Content sources for each page
+    └── theme/                 # Tailwind typography generator
+```
+
+- `components/page/*` hold presentation logic for each section
+- `lib/constants/*` centralizes data for easy editing without touching React code
+- `lib/theme/generate-typography.js` builds the typography utilities consumed by Tailwind
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and generate typography utilities:
+
+```bash
+npm install
+npm run generate:utilities
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to view the site. Changes under `src` hot-reload automatically.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description                                 |
+| --------------- | ------------------------------------------- |
+| `npm run dev`   | Start the Next.js dev server with Turbopack |
+| `npm run build` | Create an optimized production build        |
+| `npm run start` | Run the production server                   |
+| `npm run lint`  | Lint the project with ESLint                |
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy via [Vercel](https://vercel.com) or any platform that supports Next.js 16. Ensure that the `prebuild` script (typography generation) runs before `next build`.
