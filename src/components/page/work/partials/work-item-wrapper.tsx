@@ -12,7 +12,7 @@ const WorkItemWrapper: React.FC<WorkItemWrapperType> = ({
 }) => {
   return (
     <motion.div
-      {...baseInViewAnimation(0.15, 0.3)}
+      // {...baseInViewAnimation(0.15, 0.3)}
       className={cn(
         'base-container gap-xl lg:gap-7xl grid grid-cols-[2.5rem_auto] lg:grid-cols-[auto_3rem_auto]',
         className

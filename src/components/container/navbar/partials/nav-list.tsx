@@ -23,7 +23,7 @@ export const NavList: React.FC<{
           >
             {label}
             <motion.span
-              className='bg-primary absolute -bottom-1 left-0 z-50 h-0.5'
+              className='bg-primary absolute -bottom-1 left-0 z-50 hidden h-0.5 md:block'
               variants={{
                 initial: { width: 0 },
                 hover: { width: '100%' },

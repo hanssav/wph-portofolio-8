@@ -11,7 +11,10 @@ const childAnimation: Variants = {
   inView: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
   },
 };
 
@@ -38,6 +41,7 @@ const titleAnimation: Variants = {
 
 const PortfolioSection = () => {
   const { subTitle, title, id } = PORTOFOLIO_SECTION;
+
   return (
     <Section.Root
       id={id}
@@ -46,7 +50,7 @@ const PortfolioSection = () => {
       className='content-container relative flex-col'
     >
       <motion.div
-        {...baseInViewAnimation()}
+        {...baseInViewAnimation(0.3, 1)}
         className={cn(
           'base-container lg:gap-y-6xl md:gap-x-2xl md:gap-y-4xl gap-8',
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'

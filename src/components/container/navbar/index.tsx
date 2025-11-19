@@ -28,16 +28,21 @@ const Navbar = () => {
 
   const handleMenuClose = () => setIsOpen(false);
 
+  React.useEffect(() => {
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'auto';
+  }, [isOpen]);
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      style={{ background, backdropFilter: backdropBlur }}
-      className={cn(
-        'fixed top-0 z-50 w-full border-b border-neutral-800',
-        isOpen && 'bg-black'
-      )}
+      style={{
+        background: isOpen ? 'rgba(0,0,0,1)' : background,
+        backdropFilter: backdropBlur,
+      }}
+      className={cn('fixed top-0 z-50 w-full border-b border-neutral-800')}
     >
       <div className='base-container flex-between h-16 gap-8'>
         <motion.div

@@ -2,7 +2,13 @@ import React from 'react';
 import WorkCard from './work-card';
 import { WorkType } from '@/lib/constants/pages';
 import { cn } from '@/lib/utils';
-import { motion, Variants } from 'motion/react';
+import {
+  motion,
+  Variants,
+  useAnimationControls,
+  useInView,
+} from 'motion/react';
+import { AnimateType } from '..';
 
 const cardVariants = (isEven: boolean): Variants => ({
   initial: {
@@ -13,7 +19,8 @@ const cardVariants = (isEven: boolean): Variants => ({
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      delay: 0.5,
+      duration: 0.8,
       ease: [0.25, 0.1, 0.25, 1],
     },
   },
@@ -21,15 +28,15 @@ const cardVariants = (isEven: boolean): Variants => ({
 
 const timelineVariants: Variants = {
   initial: {
-    opacity: 0,
+    originY: 0,
     scaleY: 0,
   },
   inView: {
-    opacity: 1,
     scaleY: 1,
     transition: {
-      duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1],
+      delay: 0.8,
+      duration: 1.5,
+      ease: [0.34, 1.56, 0.64, 1],
     },
   },
 };
@@ -49,55 +56,77 @@ const badgeVariants: Variants = {
   },
 };
 
-interface WorkItemsProps {
+type WorkItemsProps = {
   work: WorkType;
   id: number;
   dataLength: number;
-}
+  isAnimate: AnimateType;
+  setIsAnimate: React.Dispatch<React.SetStateAction<AnimateType>>;
+};
 
-const WorkItems: React.FC<WorkItemsProps> = ({ work, id, dataLength }) => {
+const WorkItems: React.FC<WorkItemsProps> = ({
+  work,
+  id,
+  dataLength,
+  isAnimate,
+  setIsAnimate,
+}) => {
   const isEven = id % 2 === 0;
-  const isFirst = id === 0;
   const isLast = id === dataLength - 1;
 
-  const getLineHeight = () => {
-    if (isLast) return 'h-1/2';
-    return 'h-[calc(100%+4rem)] lg:h-[calc(100%+7rem)]';
-  };
+  const controls = useAnimationControls();
+  const [hasAnimated, setHasAnimated] = React.useState(false);
 
-  const leftVariants = cardVariants(false);
-  const rightVariants = cardVariants(true);
-  const mobileVariants = cardVariants(isEven);
+  const ref = React.useRef(null);
+  const inView = useInView(ref, { amount: 0.3, once: true });
+
+  const canAnimate = id === 0 || isAnimate[id - 1] === 'completed';
+
+  React.useEffect(() => {
+    if (inView && canAnimate && !hasAnimated) {
+      controls.start('inView');
+      setHasAnimated(true);
+    }
+  }, [inView, canAnimate, hasAnimated, controls]);
+
+  const onAnimateComplete = () => {
+    setIsAnimate((prev) => ({ ...prev, [id]: 'completed' }));
+  };
 
   return (
     <React.Fragment key={id}>
-      {/* Left column - desktop only */}
       <motion.div
-        variants={leftVariants}
+        initial='initial'
+        animate={controls}
+        variants={cardVariants(false)}
         className='hidden lg:block lg:justify-self-start'
       >
         <WorkCard work={work} className={cn(isEven && 'invisible')} />
       </motion.div>
 
-      {/* Center timeline */}
       <div
+        ref={ref}
         className={cn(
           'group relative mb-4 last:mb-0 nth-last-2:mb-0 md:mb-8',
-          '[&:nth-last-child(2)>.line-decoration]:h-1/2'
+          '[&:nth-last-child(2)>.line-decoration]:h-0'
         )}
       >
-        {/* Timeline line */}
-        <motion.div
-          variants={timelineVariants}
-          className={cn(
-            'line-decoration absolute left-1/2 w-px origin-top -translate-x-1/2 bg-neutral-800',
-            isFirst ? 'top-1/2' : 'top-0',
-            getLineHeight()
-          )}
-        />
+        {!isLast && (
+          <motion.div
+            initial='initial'
+            animate={controls}
+            variants={timelineVariants}
+            onAnimationComplete={onAnimateComplete}
+            className={cn(
+              'line-decoration absolute top-1/2 left-1/2 h-full w-px -translate-x-1/2 bg-neutral-800',
+              'h-[calc(100%+4rem)] lg:h-[calc(100%+5rem)]'
+            )}
+          />
+        )}
 
-        {/* Number badge */}
         <motion.span
+          initial='initial'
+          animate={controls}
           variants={badgeVariants}
           className={cn(
             'flex-center absolute inset-x-0 top-1/2 -translate-y-1/2',
@@ -110,16 +139,21 @@ const WorkItems: React.FC<WorkItemsProps> = ({ work, id, dataLength }) => {
         </motion.span>
       </div>
 
-      {/* Right column - desktop only */}
       <motion.div
-        variants={rightVariants}
+        initial='initial'
+        animate={controls}
+        variants={cardVariants(true)}
         className='hidden lg:block lg:justify-self-end'
       >
         <WorkCard work={work} className={cn(!isEven && 'invisible')} />
       </motion.div>
 
-      {/* Mobile view */}
-      <motion.div variants={mobileVariants} className='lg:hidden'>
+      <motion.div
+        initial='initial'
+        animate={controls}
+        variants={cardVariants(isEven)}
+        className='lg:hidden'
+      >
         <WorkCard work={work} />
       </motion.div>
     </React.Fragment>
