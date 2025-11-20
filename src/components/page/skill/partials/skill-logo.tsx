@@ -86,7 +86,7 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
 export const SkillImage: React.FC<{ item: SkillsLogoType }> = ({ item }) => {
   return (
     <div className='relative size-[26.24px] overflow-hidden rounded-full'>
-      <Image fill src={item.src} alt={item.src} priority />
+      <Image fill src={item.src} alt={item.src} priority fetchPriority='high' />
     </div>
   );
 };

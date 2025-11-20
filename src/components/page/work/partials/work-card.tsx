@@ -23,6 +23,7 @@ const WorkCard: React.FC<{ work: WorkType; className?: string }> = ({
           src={work.img}
           alt={work.title}
           priority
+          fetchPriority='high'
           className='object-contain'
         />
       </div>

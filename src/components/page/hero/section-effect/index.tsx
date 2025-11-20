@@ -1,3 +1,5 @@
+'use client';
+
 import { Shapes } from '@/components/container';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';

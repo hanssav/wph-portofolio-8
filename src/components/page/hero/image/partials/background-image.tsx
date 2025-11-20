@@ -1,5 +1,7 @@
+'use client';
+
 import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
+import { motion, LazyMotion, m } from 'motion/react';
 import Image from 'next/image';
 import { BackgroundImageType } from '../../types';
 
@@ -29,6 +31,8 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         src={imageData.src}
         alt={imageData.title}
         fill
+        priority
+        fetchPriority='high'
         className={cn(imageData.className)}
         sizes='(max-width: 768px) 100vw,
            (min-width: 768px) 46vw'

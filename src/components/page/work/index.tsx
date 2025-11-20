@@ -1,3 +1,5 @@
+'use client';
+
 import { WORK_DATA, WORK_SECTION } from '@/lib/constants/pages';
 import { Section, Shapes } from '../../container';
 import { WorkItems, WorkItemWrapper } from './partials';

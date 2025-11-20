@@ -1,3 +1,4 @@
+'use client';
 import { Mapper, Section } from '../../container';
 import { Button } from '../../ui/button';
 import {

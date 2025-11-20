@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Star } from 'lucide-react';
 import { TestimonialType } from '@/lib/constants/pages';
@@ -37,8 +39,8 @@ const TestimonialCardItem: React.FC<TestimonialCardItemProps> = ({
             src={testimonial.img}
             alt={testimonial.name}
             priority
+            fetchPriority='high'
             className='object-contain'
-            // objectFit='contain'
           />
         </div>
       </div>

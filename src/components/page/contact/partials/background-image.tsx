@@ -52,6 +52,8 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         src={imageData.src}
         alt={imageData.alt}
         fill
+        priority
+        fetchPriority='high'
         className={cn('object-cover grayscale', imageData.className)}
       />
 

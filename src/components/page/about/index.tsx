@@ -1,9 +1,10 @@
+'use client';
+
 import { Mapper, Section, Shapes } from '../../container';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { ABOUT_IMAGE, ABOUT_SECTION } from '@/lib/constants/pages';
 import { motion } from 'motion/react';
-import { childTextAnimation, textAnimation } from '@/lib/constants/animation';
 
 const AboutSection = () => {
   const { desc, subTitle, title, id } = ABOUT_SECTION;
@@ -49,6 +50,7 @@ const AboutSection = () => {
               alt={item.name}
               sizes={item.imageSizes}
               priority
+              fetchPriority='high'
               className='object-contain'
             />
           </motion.div>

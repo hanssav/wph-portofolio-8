@@ -1,3 +1,5 @@
+'use client';
+
 import { ImageDataType } from '../types';
 import { IMAGES } from '@/lib/constants';
 import { BackgroundImage } from './partials';

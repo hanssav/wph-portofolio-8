@@ -24,7 +24,13 @@ const ModalContent: React.FC<ModalContentType> = ({
     <DialogContent className='w-full md:min-w-[480px]'>
       <DialogHeader className='relativve'>
         <div className='absolute inset-x-0 mx-auto aspect-square size-[108px] -translate-y-1/2 overflow-hidden md:size-[148px]'>
-          <Image fill src={message.icon} alt={message.title} />
+          <Image
+            fill
+            src={message.icon}
+            alt={message.title}
+            priority
+            fetchPriority='high'
+          />
         </div>
       </DialogHeader>
       <div className='pt-8xl pb-3xl px-3xl lg:px-3xl space-y-3xl lg:pb-3xl text-center'>

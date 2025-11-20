@@ -1,3 +1,5 @@
+'use client';
+
 import { TESTIMONIAL_DATA, TESTIMONIAL_SECTION } from '@/lib/constants/pages';
 import { Section } from '../../container';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';

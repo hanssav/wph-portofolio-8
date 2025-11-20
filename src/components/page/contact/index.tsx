@@ -1,4 +1,5 @@
-import { IMAGES } from '@/lib/constants';
+'use client';
+
 import { Shapes } from '../../container';
 import { motion, Variants } from 'motion/react';
 import {
