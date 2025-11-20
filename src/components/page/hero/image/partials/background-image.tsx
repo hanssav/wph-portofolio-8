@@ -16,7 +16,7 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
     <div
       className={cn(
         'h-full min-h-[513px] w-screen overflow-hidden',
-        'w-[45.90vw] md:relative md:h-[881px]',
+        'w-[45.90vw relative md:h-[881px]',
         className
       )}
     >
