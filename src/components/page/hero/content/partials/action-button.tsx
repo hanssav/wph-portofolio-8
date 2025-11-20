@@ -26,6 +26,7 @@ const ActionButton: React.FC<ActionButtonType> = ({ label }) => {
         transition: { duration: 0.3 },
       }}
       whileTap={{ scale: 0.98 }}
+      aria-label={label}
       className='w-full py-2 md:max-w-[250px] lg:max-w-[300px]'
     >
       <span className='text-sm-bold md:text-sm-bold lg:text-md-bold'>

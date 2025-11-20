@@ -5,7 +5,7 @@ import { BackgroundImage } from './partials';
 import { Card } from '@/components/ui/card';
 import { Mapper } from '@/components/container';
 import { Star } from 'lucide-react';
-import { hover, motion, type Variants } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 const imageData: ImageDataType = {

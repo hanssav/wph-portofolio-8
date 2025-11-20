@@ -77,8 +77,9 @@ const PortfolioSection = () => {
                     alt={portfolio.title}
                     fill
                     className='object-cover'
-                    priority
+                    // priority
                     fetchPriority='high'
+                    loading='lazy'
                     sizes='(max-width: 768px) 100vw, 50vw'
                   />
                 </motion.div>

@@ -2,6 +2,7 @@
   "name": "wph-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "generate:utilities": "node src/lib/theme/generate-typography.js",
     "predev": "npm run generate:utilities",
@@ -9,7 +10,8 @@
     "prebuild": "npm run generate:utilities",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:analyze": "ANALYZE=true next build --webpack"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
@@ -25,6 +27,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -18,12 +18,16 @@ type ButtonActionProps = React.ComponentProps<typeof MotionButton> & {
 };
 
 const ButtonAction = React.forwardRef<HTMLButtonElement, ButtonActionProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, 'aria-label': ariaLabel, ...props }, ref) => {
+    const computedAriaLabel =
+      typeof children === 'string' ? undefined : ariaLabel;
+
     return (
       <MotionButton
         ref={ref}
         className={cn('w-full', props.className)}
         variants={buttonVariants}
+        aria-label={computedAriaLabel}
         initial='initial'
         whileHover='hover'
         whileTap='tap'
