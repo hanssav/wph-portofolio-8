@@ -57,6 +57,7 @@ export const ServiceCardItems: React.FC<{
 }> = ({ service, idx }) => {
   return (
     <motion.div
+      id={idx.toString()}
       variants={cardVariants}
       whileHover='hover'
       className={cn(

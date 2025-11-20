@@ -20,7 +20,7 @@ const SectionWrapper: React.FC<SectionWrapperType> = ({
   id,
 }) => {
   const renderContent = () => {
-    if (!!title)
+    if (title)
       return (
         <>
           <Content>

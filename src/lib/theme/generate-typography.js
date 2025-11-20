@@ -123,4 +123,5 @@ if (!fs.existsSync(outputDir)) {
 }
 
 fs.writeFileSync(outputPath, cssContent);
+// eslint-disable-next-line
 console.log('✅ Typography utilities generated:', outputPath);

@@ -1,6 +1,6 @@
 import { SectionData } from '@/types';
 import { IMAGES } from '../asset.contants';
-import { MotionProps, type Variants } from 'motion/react';
+import { MotionProps } from 'motion/react';
 
 export const ABOUT_SECTION: SectionData = {
   id: 'about-me',

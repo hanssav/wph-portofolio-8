@@ -41,7 +41,8 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
       className={cn(
         'relative w-full overflow-hidden',
         'aspect-100/152',
-        'lg:aspect-auto lg:h-full'
+        'lg:aspect-auto lg:h-full',
+        className
       )}
       initial='initial'
       whileInView='animate'

@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils';
 import { BaseComponent } from '@/types';
 import React from 'react';
 import { motion } from 'motion/react';
-import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 
 type WorkItemWrapperType = BaseComponent;
 
