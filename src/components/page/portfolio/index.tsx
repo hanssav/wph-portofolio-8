@@ -1,3 +1,5 @@
+'use client';
+
 import { PORTFOLIO_DATA, PORTOFOLIO_SECTION } from '@/lib/constants/pages';
 import { cn } from '@/lib/utils';
 import { Section } from '../../container';
@@ -76,6 +78,7 @@ const PortfolioSection = () => {
                     fill
                     className='object-cover'
                     priority
+                    fetchPriority='high'
                     sizes='(max-width: 768px) 100vw, 50vw'
                   />
                 </motion.div>

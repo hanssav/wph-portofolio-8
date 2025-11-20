@@ -41,7 +41,8 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
       className={cn(
         'relative w-full overflow-hidden',
         'aspect-100/152',
-        'lg:aspect-auto lg:h-full'
+        'lg:aspect-auto lg:h-full',
+        className
       )}
       initial='initial'
       whileInView='animate'
@@ -52,6 +53,9 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         src={imageData.src}
         alt={imageData.alt}
         fill
+        priority
+        sizes='(max-width: 1024px) 100vw, 50vw'
+        fetchPriority='high'
         className={cn('object-cover grayscale', imageData.className)}
       />
 

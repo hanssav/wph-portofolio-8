@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion, type Variants } from 'motion/react';
 import { cn } from '@/lib/utils';
@@ -55,6 +57,7 @@ export const ServiceCardItems: React.FC<{
 }> = ({ service, idx }) => {
   return (
     <motion.div
+      id={idx.toString()}
       variants={cardVariants}
       whileHover='hover'
       className={cn(

@@ -1,3 +1,5 @@
+'use client';
+
 import { motion, Variants } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import Image from 'next/image';
@@ -14,7 +16,7 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
     <div
       className={cn(
         'h-full min-h-[513px] w-screen overflow-hidden',
-        'w-[45.90vw] md:relative md:h-[881px]',
+        'relative w-[45.90vw] md:h-[881px]',
         className
       )}
     >
@@ -29,6 +31,8 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         src={imageData.src}
         alt={imageData.title}
         fill
+        priority
+        fetchPriority='high'
         className={cn(imageData.className)}
         sizes='(max-width: 768px) 100vw,
            (min-width: 768px) 46vw'

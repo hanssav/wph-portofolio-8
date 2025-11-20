@@ -1,6 +1,8 @@
+'use client';
+
+import React from 'react';
 import { cn } from '@/lib/utils';
 import { BaseComponent } from '@/types';
-import React from 'react';
 import { motion } from 'motion/react';
 import { childTextAnimation, textAnimation } from '@/lib/constants/animation';
 
@@ -18,7 +20,7 @@ const SectionWrapper: React.FC<SectionWrapperType> = ({
   id,
 }) => {
   const renderContent = () => {
-    if (!!title)
+    if (title)
       return (
         <>
           <Content>

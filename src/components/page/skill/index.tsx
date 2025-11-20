@@ -1,3 +1,5 @@
+'use client';
+
 import { SKILL_SECTION, SKILLS_DATA, SKILLS_LOGO } from '@/lib/constants/pages';
 import { SkillImage, SkillLogo, SkillLogoItem } from './partials/skill-logo';
 import { SKillPercent, SkillPercentItems } from './partials/skill-percent';

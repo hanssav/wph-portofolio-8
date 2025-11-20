@@ -1,3 +1,5 @@
+'use client';
+
 import { SERVICE_DATAS, SERVICE_SECTION } from '@/lib/constants/pages';
 import { ServiceCard, ServiceCardItems } from './partials';
 import { Section } from '@/components/container';

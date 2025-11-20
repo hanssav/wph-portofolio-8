@@ -1,10 +1,10 @@
 import { BaseComponent } from '@/types';
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { motion, MotionProps, Variants } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 
-interface TestimonialCardsProps extends BaseComponent {}
+type TestimonialCardsProps = BaseComponent;
 
 const itemWrapperVariants: Variants = {
   initial: { scale: 0.85, opacity: 0 },

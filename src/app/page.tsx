@@ -1,5 +1,3 @@
-'use client';
-
 import { LayoutWrapper } from '@/components/container';
 import AboutSection from '@/components/page/about';
 import ContactSection from '@/components/page/contact';

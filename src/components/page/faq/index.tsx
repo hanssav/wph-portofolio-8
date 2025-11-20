@@ -1,3 +1,5 @@
+'use client';
+
 import { FAQ, FAQ_DATA, FAQ_SECTION } from '@/lib/constants/pages';
 import { Section } from '../../container';
 import { FaqCards, FaqItem } from './partials';

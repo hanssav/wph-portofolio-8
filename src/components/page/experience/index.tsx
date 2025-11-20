@@ -1,3 +1,4 @@
+'use client';
 import { Mapper, Section } from '../../container';
 import { Button } from '../../ui/button';
 import {
@@ -5,7 +6,7 @@ import {
   EXPERIENCE_SECTION,
 } from '@/lib/constants/pages/experience';
 import { ExperienceItem } from './partials';
-import { motion, MotionProps, type Variants } from 'motion/react';
+import { motion, MotionProps } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
 
 const MotionButton = motion.create(Button);

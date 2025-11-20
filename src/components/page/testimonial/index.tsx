@@ -1,6 +1,8 @@
+'use client';
+
 import { TESTIMONIAL_DATA, TESTIMONIAL_SECTION } from '@/lib/constants/pages';
 import { Section } from '../../container';
-import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '../../ui/button';
 import { TestimonialCardItem, TestimonialCards } from './partials';
 import { motion, MotionProps } from 'motion/react';
