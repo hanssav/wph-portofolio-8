@@ -51,6 +51,7 @@ const TestimonialSection = () => {
             className='aspect-square size-[48px] md:size-14'
             {...buttonAnimation(1, isIntroDone)}
             onAnimationComplete={() => setIsIntroDone(true)}
+            aria-label='arrow-left-button'
           >
             <ArrowLeft className='size-4 text-neutral-800 md:size-6' />
           </MotionButton>
@@ -60,6 +61,7 @@ const TestimonialSection = () => {
             className='aspect-square size-[48px] md:size-14'
             {...buttonAnimation(1.2, isIntroDone)}
             onAnimationComplete={() => setIsIntroDone(true)}
+            aria-label='arrow-right-button'
           >
             <ArrowRight className='text-primary size-4 md:size-6' />
           </MotionButton>

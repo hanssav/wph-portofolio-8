@@ -71,6 +71,7 @@ const Navbar = () => {
                   size='icon'
                   className='cursor-pointer md:hidden'
                   onClick={() => setIsOpen(!isOpen)}
+                  aria-label={isOpen ? 'close-icon' : 'menu-icon'}
                 >
                   <AnimatePresence mode='wait' initial={false}>
                     {isOpen ? (

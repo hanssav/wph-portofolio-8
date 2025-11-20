@@ -55,8 +55,12 @@ const ContentImage: React.FC<{ contentImage: ContentImageType }> = ({
         variants={socialIconsVariants}
         className='lg:gap-3xl gap-xl flex justify-center'
       >
-        {Array.from([Dribbble, Instagram, Linkedin]).map((icon, idx) => (
-          <IconCard key={idx} icon={icon} />
+        {[
+          { icon: Dribbble, label: 'Dribbble' },
+          { icon: Instagram, label: 'Instagram' },
+          { icon: Linkedin, label: 'LinkedIn' },
+        ].map(({ icon, label }, idx) => (
+          <IconCard key={idx} icon={icon} label={label} />
         ))}
       </motion.div>
       <div className='flex-center gap-xs flex-col'>

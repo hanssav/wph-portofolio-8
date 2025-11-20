@@ -33,6 +33,7 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         fill
         priority
         fetchPriority='high'
+        style={{ transformOrigin: 'center' }}
         className={cn(imageData.className)}
         sizes='(max-width: 768px) 100vw,
            (min-width: 768px) 46vw'

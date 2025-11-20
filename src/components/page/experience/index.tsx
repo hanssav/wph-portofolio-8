@@ -37,7 +37,11 @@ const ExperienceSection = () => {
         {(item) => <ExperienceItem key={item.id} item={item} />}
       </Mapper>
 
-      <MotionButton {...buttonAnimation} className='w-full md:max-w-60 md:p-2'>
+      <MotionButton
+        {...buttonAnimation}
+        aria-label='hire-me'
+        className='w-full md:max-w-60 md:p-2'
+      >
         HIRE ME
       </MotionButton>
     </Section.Root>

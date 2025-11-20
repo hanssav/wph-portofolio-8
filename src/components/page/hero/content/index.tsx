@@ -19,9 +19,9 @@ const HeroContent = () => {
               'max-w-20 md:max-w-[80px] lg:max-w-[114px]'
             )}
           />
-          <h4 className='text-md-medium md:text-lg-medium lg:text-xl-medium'>
+          <h2 className='text-md-medium md:text-lg-medium lg:text-xl-medium'>
             Hi, I am Handi Irawan Frontend Developer
-          </h4>
+          </h2>
         </motion.span>
 
         <motion.h1
