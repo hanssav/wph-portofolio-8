@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Red_Hat_Display } from 'next/font/google';
 import './globals.css';
+import { cn } from '@/lib/utils';
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ['latin'],
@@ -19,8 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='dark' data-scroll-behavior='smooth'>
-      <body className={redHatDisplay.variable}>
+    <html
+      lang='en'
+      className={cn('dark', redHatDisplay.className)}
+      data-scroll-behavior='smooth'
+    >
+      <body>
         <main id='main-content'>{children}</main>
       </body>
     </html>

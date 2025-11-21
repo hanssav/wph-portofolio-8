@@ -24,7 +24,6 @@ const HeroSection = () => {
         )}
       >
         <HeroImage />
-
         <BlurEffect />
       </div>
     </section>

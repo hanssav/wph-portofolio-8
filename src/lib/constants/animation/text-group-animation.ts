@@ -2,7 +2,7 @@ import { MotionProps, Variants } from 'motion/react';
 
 export const textAnimation: Partial<MotionProps> = {
   variants: {
-    initial: { opacity: 0 },
+    initial: { opacity: 0.01 },
     animate: {
       opacity: 1,
       transition: {
@@ -21,7 +21,7 @@ export const textAnimation: Partial<MotionProps> = {
 };
 
 export const childTextAnimation: Variants = {
-  initial: { y: 30, opacity: 0 },
+  initial: { y: 30, opacity: 0.01 },
   animate: {
     y: 0,
     opacity: 1,

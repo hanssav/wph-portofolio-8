@@ -12,7 +12,12 @@ const LayoutWrapper: React.FC<LayoutWrapperProps> = ({
   children,
 }) => {
   return (
-    <div className={cn('bg-background text-foreground w-full', className)}>
+    <div
+      className={cn(
+        'bg-background text-foreground w-full overflow-hidden',
+        className
+      )}
+    >
       <Navbar />
       {children}
       <Footer />
