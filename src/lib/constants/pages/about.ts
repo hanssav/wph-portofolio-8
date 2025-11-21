@@ -117,8 +117,8 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       absolute top-[164px] left-[calc(50%)] -translate-x-1/2
       sm:top-[190px]
       md:top-[250px]
-      lg:top-[calc(50%)] lg:left-[calc(50%+240px)], 
-      brightness-[0.6], 
+      lg:top-[calc(50%)] lg:left-[calc(50%+240px)]
+      brightness-[0.6],
     `,
     size: `
       min-w-[132.5px] min-h-[100px]
