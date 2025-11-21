@@ -4,8 +4,8 @@ import './globals.css';
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ['latin'],
-  variable: '--font-redhat', // untuk CSS variable
-  display: 'swap', // recommended
+  variable: '--font-redhat',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='dark' data-scroll-behavior='smooth'>
-      <body className={redHatDisplay.variable}>{children}</body>
+      <body className={redHatDisplay.variable}>
+        <main id='main-content'>{children}</main>
+      </body>
     </html>
   );
 }
