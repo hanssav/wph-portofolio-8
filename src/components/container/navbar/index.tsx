@@ -37,8 +37,8 @@ const Navbar = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       style={{
         background: isOpen ? 'rgba(0,0,0,1)' : background,
@@ -46,18 +46,13 @@ const Navbar = () => {
       }}
       className={cn('fixed top-0 z-50 w-full border-b border-neutral-800')}
     >
-      <div className='base-container flex-between h-16 gap-8'>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className='flex-start flex-1 cursor-pointer gap-2'
-        >
+      <div className='base-container flex-between h-16'>
+        <div className='flex-start flex-1 cursor-pointer gap-2'>
           <div className='border-top w-full max-w-6 border border-white md:max-w-10' />
           <Link href={'#'} className='cursor-pointer'>
-            <h1 className='text-primary text-xl-bold'>Handi Irawan.</h1>
+            <h2 className='text-primary text-xl-bold'>Handi Irawan.</h2>
           </Link>
-        </motion.div>
+        </div>
         <nav>
           <NavList className='md:flex-start hidden flex-row' />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
