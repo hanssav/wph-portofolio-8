@@ -28,8 +28,6 @@ const ModalContent: React.FC<ModalContentType> = ({
             fill
             src={message.icon}
             alt={message.title}
-            priority
-            fetchPriority='high'
           />
         </div>
       </DialogHeader>

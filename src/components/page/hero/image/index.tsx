@@ -155,7 +155,7 @@ const paragraphVariant: Variants = {
 const HeroImage = () => {
   return (
     <BackgroundImage imageData={imageData}>
-      <MotionCard
+      {/* <MotionCard
         initial='initial'
         whileInView='enter'
         animate='rest'
@@ -193,7 +193,7 @@ const HeroImage = () => {
         <motion.p variants={paragraphVariant}>
           Many Client Trust with me
         </motion.p>
-      </MotionCard>
+      </MotionCard> */}
     </BackgroundImage>
   );
 };

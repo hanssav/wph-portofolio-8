@@ -38,8 +38,6 @@ const TestimonialCardItem: React.FC<TestimonialCardItemProps> = ({
             fill
             src={testimonial.img}
             alt={testimonial.name}
-            priority
-            fetchPriority='high'
             className='object-contain'
           />
         </div>

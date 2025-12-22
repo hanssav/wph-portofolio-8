@@ -49,9 +49,7 @@ const AboutSection = () => {
               fill
               alt={item.name}
               sizes={item.imageSizes}
-              priority
-              fetchPriority='high'
-              className='object-contain'
+              className='object-cover'
             />
           </motion.div>
         )}

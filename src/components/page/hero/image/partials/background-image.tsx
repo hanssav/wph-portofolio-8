@@ -20,7 +20,7 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
         className
       )}
     >
-      <MotionImage
+      <motion.div
         initial={{ opacity: 0.01, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -28,16 +28,20 @@ const BackgroundImage: React.FC<BackgroundImageType> = ({
           delay: 0.3,
           ease: [0.25, 0.1, 0.25, 1],
         }}
-        src={imageData.src}
-        alt={imageData.title}
-        fill
-        priority
-        fetchPriority='high'
+        className='relative h-full w-full'
         style={{ transformOrigin: 'center' }}
-        className={cn(imageData.className)}
-        sizes='(max-width: 768px) 100vw,
-           (min-width: 768px) 46vw'
-      />
+      >
+        <Image
+          src={imageData.src}
+          alt={imageData.title}
+          fill
+          priority
+          fetchPriority='high'
+          className={cn(imageData.className)}
+          sizes='(max-width: 768px) 100vw,
+             (min-width: 768px) 46vw'
+        />
+      </motion.div>
       <div className='absolute bottom-0 z-30 w-full px-4 py-10'>{children}</div>
     </div>
   );

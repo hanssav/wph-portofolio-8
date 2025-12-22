@@ -1,5 +1,5 @@
 import { SectionData } from '@/types';
-import { ICONS } from '../asset.contants';
+import { ICONS } from '../asset.constants';
 
 export const SKILL_SECTION: SectionData = {
   id: 'skills',
@@ -27,10 +27,12 @@ export type SkillData = {
 };
 
 export const SKILLS_DATA: SkillData[] = [
-  { id: 1, name: 'React JS', percentage: 50 },
-  { id: 2, name: 'HTML', percentage: 80 },
-  { id: 3, name: 'Tailwind CSS', percentage: 90 },
-  { id: 4, name: 'HTML', percentage: 100 },
-  { id: 5, name: 'Docker', percentage: 70 },
-  { id: 6, name: 'Javascript', percentage: 90 },
+  { id: 1, name: 'React.js', percentage: 95 },
+  { id: 2, name: 'Next.js', percentage: 95 },
+  { id: 3, name: 'React Native', percentage: 80 },
+  { id: 4, name: 'TypeScript', percentage: 90 },
+  { id: 5, name: 'Redux Toolkit', percentage: 85 },
+  { id: 6, name: 'TanStack Query', percentage: 90 },
+  { id: 7, name: 'Tailwind CSS', percentage: 95 },
+  { id: 8, name: 'Framer Motion', percentage: 80 },
 ];

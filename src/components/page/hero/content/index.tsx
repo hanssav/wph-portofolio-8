@@ -53,8 +53,11 @@ const HeroContent = () => {
             'text-neutral-400 md:max-w-[500px] lg:max-w-[597px]'
           )}
         >
-          Bridging creativity and functionality to deliver stunning,
-          user-friendly web applications
+          {/* Bridging creativity and functionality to deliver stunning,
+          user-friendly web applications */}
+          Specializing in React.js, Next.js, and React Native. Building
+          scalable, high-performance web applications with immersive
+          interactions.
         </motion.p>
       </div>
 

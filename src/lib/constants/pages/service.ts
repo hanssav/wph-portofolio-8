@@ -1,9 +1,9 @@
 import { SectionData } from '@/types';
 
 export const SERVICE_SECTION: SectionData = {
-  id: 'service',
-  title: 'MY SERVICE EXPERTISE',
-  subTitle: 'SERVICE',
+  id: 'expertise',
+  title: 'MY CORE EXPERTISE',
+  subTitle: 'EXPERTISE',
   desc: `Creating modern, intuitive, and visually consistent web experiences 
     that align with industry trends and user expectations.`,
 };
@@ -17,17 +17,22 @@ export type ServiceData = {
 export const SERVICE_DATAS: ServiceData[] = [
   {
     id: '01',
-    title: 'Custom Website Development',
-    description: `Building responsive, fast, and scalable websites tailored to your needs.`,
+    title: 'Frontend Web Development',
+    description: `Building scalable, high-performance web applications using React.js and Next.js with a focus on modern architecture and best practices.`,
   },
   {
     id: '02',
-    title: 'Web Performance Optimization',
-    description: `Enhancing website speed, SEO, and overall performance for better results.`,
+    title: 'Mobile App Development',
+    description: `Creating robust cross-platform mobile applications for iOS and Android using React Native, ensuring a native-like user experience.`,
   },
   {
     id: '03',
-    title: 'Website Maintenance & Debugging',
-    description: `Fixing bugs, improving UI, and ensuring smooth performance over time.`,
+    title: 'Interactive UI/UX Implementation',
+    description: `Translating designs into pixel-perfect, responsive interfaces with immersive animations using Framer Motion and Tailwind CSS.`,
   },
+  // {
+  //   id: '04',
+  //   title: 'Performance Optimization',
+  //   description: `Enhancing application speed, load times, and Core Web Vitals to ensure a smooth and efficient user experience.`,
+  // },
 ];
