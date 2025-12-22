@@ -9,7 +9,7 @@ const skillVariants: Variants = {
   animate: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1, // Reduced from 0.2
       delayChildren: 0.3,
     },
   },
@@ -31,7 +31,7 @@ export const SKillPercent: React.FC<BaseComponent> = ({
       )}
     >
       {children}
-    </motion.div>
+  </motion.div> 
   );
 };
 
@@ -40,7 +40,7 @@ const itemsVariants: Variants = {
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8 },
+    transition: { duration: 0.5 }, // Reduced from 0.8
   },
 };
 
@@ -48,7 +48,7 @@ const barVariants: (percentage: number) => Variants = (percentage) => ({
   initial: { scaleX: 0 },
   animate: {
     scaleX: percentage / 100,
-    transition: { duration: 2, ease: 'easeOut' },
+    transition: { duration: 1.2, ease: 'easeOut' }, // Reduced from 2.0
   },
 });
 
@@ -58,9 +58,9 @@ const nameVariants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5, // Reduced from 0.8
       ease: 'easeOut',
-      delay: 0.5,
+      delay: 0.2, // Reduced from 0.5
     },
   },
 };
@@ -83,9 +83,9 @@ const percentageVariants = (id: number): Variants => ({
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5, // Reduced from 0.8
       ease: 'easeOut',
-      delay: 2 + 0.2 * id,
+      delay: 0.5 + 0.1 * id, // Changed from 2 + 0.2 * id
     },
   },
 });

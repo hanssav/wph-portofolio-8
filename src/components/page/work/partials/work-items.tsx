@@ -19,8 +19,8 @@ const cardVariants = (isEven: boolean): Variants => ({
     opacity: 1,
     x: 0,
     transition: {
-      delay: 0.5,
-      duration: 0.8,
+      delay: 0.2, // Reduced from 0.5
+      duration: 0.5, // Reduced from 0.8
       ease: [0.25, 0.1, 0.25, 1],
     },
   },
@@ -34,8 +34,8 @@ const timelineVariants: Variants = {
   inView: {
     scaleY: 1,
     transition: {
-      delay: 0.8,
-      duration: 1.5,
+      delay: 0.4, // Reduced from 0.8
+      duration: 0.8, // Reduced from 1.5
       ease: [0.34, 1.56, 0.64, 1],
     },
   },
@@ -50,7 +50,7 @@ const badgeVariants: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.3, // Reduced from 0.4
       ease: [0.34, 1.56, 0.64, 1],
     },
   },

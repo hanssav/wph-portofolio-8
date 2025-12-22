@@ -71,9 +71,7 @@ const ExperienceItem: React.FC<{ item: ExperienceDataType }> = ({ item }) => {
           src={item.img}
           fill
           alt={item.title}
-          priority
           className='object-cover'
-          fetchPriority='high'
           sizes='60px'
         />
       </motion.div>

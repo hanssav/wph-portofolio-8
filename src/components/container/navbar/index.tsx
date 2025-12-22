@@ -57,38 +57,36 @@ const Navbar = () => {
           <NavList className='md:flex-start hidden flex-row' />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <SheetTrigger asChild>
-                <MotionButton
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  variant='ghost'
-                  size='icon'
-                  className='cursor-pointer md:hidden'
-                  onClick={() => setIsOpen(!isOpen)}
-                  aria-label={isOpen ? 'close-icon' : 'menu-icon'}
-                >
-                  <AnimatePresence mode='wait' initial={false}>
-                    {isOpen ? (
-                      <MotionXIcon
-                        key='close'
-                        initial={{ rotate: -90, opacity: 0 }}
-                        animate={{ rotate: 0, opacity: 1 }}
-                        exit={{ rotate: 90, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      />
-                    ) : (
-                      <MotionMenuIcon
-                        key='menu'
-                        initial={{ rotate: 90, opacity: 0 }}
-                        animate={{ rotate: 0, opacity: 1 }}
-                        exit={{ rotate: -90, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      />
-                    )}
-                  </AnimatePresence>
-                </MotionButton>
-              </SheetTrigger>
+              <MotionButton
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                variant='ghost'
+                size='icon'
+                className='cursor-pointer md:hidden'
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? 'close-icon' : 'menu-icon'}
+              >
+                <AnimatePresence mode='wait' initial={false}>
+                  {isOpen ? (
+                    <MotionXIcon
+                      key='close'
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  ) : (
+                    <MotionMenuIcon
+                      key='menu'
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  )}
+                </AnimatePresence>
+              </MotionButton>
             </SheetTrigger>
             <SheetContent className='base-container mt-20 border border-t border-neutral-800'>
               <NavList onItemClick={handleMenuClose} />

@@ -1,5 +1,5 @@
 import { SectionData } from '@/types';
-import { IMAGES } from '../asset.contants';
+import { IMAGES } from '../asset.constants';
 
 export const EXPERIENCE_SECTION: SectionData = {
   id: 'working',
@@ -21,18 +21,18 @@ export const EXPERIENCE_DATA: ExperienceDataType[] = [
     title: 'WORKING WITH ME',
     img: IMAGES.PHOTOS,
     data: [
-      'React Expert',
-      'Precise Website Implementation',
-      'TypeScript Proficiency',
-      'Clean, Maintainable Code',
-      'Responsive Website Development',
-      'UI Design Proficiency (Figma)',
+      'Scalable & High-Performance Code',
+      'Pixel-Perfect Design Implementation',
+      'Advanced React & Next.js Expertise',
+      'Clean, Testable & Maintainable Code',
+      'Seamless Cross-Platform Experiences',
+      'Modern UI/UX with Motion & Animation',
     ],
   },
   {
     id: 'others',
     title: 'ANOTHER TALENT',
-    img: IMAGES.PHOTOS,
+    img: IMAGES.AVATAR_UNKNOWN,
     data: [
       'Basic React Knowledge',
       'Inconsistent Design Translation',

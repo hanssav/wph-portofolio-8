@@ -1,13 +1,11 @@
 import { SectionData } from '@/types';
-import { IMAGES } from '../asset.contants';
+import { IMAGES } from '../asset.constants';
 import { MotionProps } from 'motion/react';
 
 export const ABOUT_SECTION: SectionData = {
   id: 'about-me',
-  title: 'CRAFTING SEAMLESS HIGH-PERFORMANCE WEB EXPERIENCES',
-  desc: `I love turning designs into interactive, high-performance websites. 
-  With a keen eye for detail and a deep understanding of frontend technologies,
-   I create smooth and visually appealing user experiences.`,
+  title: 'PROFESSIONAL SUMMARY',
+  desc: `Dynamic Frontend Developer with 2+ years of professional experience specializing in the React.js and Next.js ecosystems. Expert in building scalable, high-performance web applications and cross-platform mobile apps using React Native. Proficient in modern UI libraries like Tailwind CSS, Shadcn UI, and Framer Motion for immersive interactions. Possess a solid foundation in Fullstack JavaScript with a strong commitment to code quality using Jest and React Testing Library.`,
   subTitle: 'ABOUT ME',
 };
 
@@ -74,10 +72,10 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       lg:left-[calc(50%-450px)] lg:top-10
     `,
     size: `
-      min-h-[127px] min-w-[170px]
-      sm:w-[200px] sm:h-[150px]
-      md:w-[260px] md:h-[195px]
-      lg:w-[238px] lg:h-[178px]
+      min-h-[170px] min-w-[170px]
+      sm:w-[200px] sm:h-[200px]
+      md:w-[260px] md:h-[260px]
+      lg:w-[238px] lg:h-[238px]
     `,
     imageSizes: `
       (min-width: 1024px) 238px,
@@ -97,10 +95,10 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       lg:top-24 lg:left-[calc(50%+300px)] lg:right-auto
     `,
     size: `
-      min-h-[99px] min-w-[134px]
-      sm:w-[180px] sm:h-[135px]
-      md:w-[240px] md:h-[180px]
-      lg:w-[250px] lg:h-[187px]
+      min-h-[134px] min-w-[134px]
+      sm:w-[180px] sm:h-[180px]
+      md:w-[240px] md:h-[240px]
+      lg:w-[250px] lg:h-[250px]
     `,
     imageSizes: `
       (min-width: 1024px) 250px,
@@ -121,10 +119,10 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       brightness-[0.6],
     `,
     size: `
-      min-w-[132.5px] min-h-[100px]
-      sm:w-[190px] sm:h-[143px]
-      md:w-[250px] md:h-[188px]
-      lg:w-[117px] lg:h-[88px]
+      min-w-[132.5px] min-h-[132.5px]
+      sm:w-[190px] sm:h-[190px]
+      md:w-[250px] md:h-[250px]
+      lg:w-[117px] lg:h-[117px]
     `,
     imageSizes: `
       (min-width: 1024px) 117px,

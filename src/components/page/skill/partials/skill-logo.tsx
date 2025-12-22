@@ -11,7 +11,7 @@ const mapperVariant: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.3,
+      delayChildren: 0.1, // Reduced from 0.3
     },
   },
 };
@@ -35,7 +35,7 @@ const childMapperVariant: Variants = {
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }, // Reduced from 0.8
   },
 };
 
@@ -52,7 +52,7 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
         scale: 1.15,
         rotate: 5,
         y: -8,
-        borderColor: 'transparent',
+        borderColor: 'rgba(37, 43, 55, 0)',
         boxShadow:
           '0 8px 24px rgba(136, 221, 14, 0.2), 0 4px 8px rgba(136, 221, 14, 0.1)',
       }}
@@ -86,7 +86,13 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
 export const SkillImage: React.FC<{ item: SkillsLogoType }> = ({ item }) => {
   return (
     <div className='relative size-[26.24px] overflow-hidden rounded-full'>
-      <Image fill src={item.src} alt={item.src} priority fetchPriority='high' />
+      <Image
+        fill
+        src={item.src}
+        alt={item.src}
+        unoptimized
+        sizes='26px'
+      />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { SectionData } from '@/types';
-import { ICONS, IMAGES } from '../asset.contants';
+import { ICONS, IMAGES } from '../asset.constants';
 
 export const CONTACT_SECTION: SectionData = {
   id: 'contact',
@@ -85,5 +85,5 @@ export const imgData = {
 
 export const contentImageData = {
   name: 'Handi Irawan',
-  status: 'Available for Work',
+  status: 'Open for Opportunities',
 };

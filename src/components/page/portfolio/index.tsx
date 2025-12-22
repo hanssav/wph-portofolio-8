@@ -7,6 +7,8 @@ import Image from 'next/image';
 
 import { motion, Variants } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
+import { Button } from '@/components/ui/button';
+import { Github, ExternalLink } from 'lucide-react';
 
 const childAnimation: Variants = {
   initial: { opacity: 0, y: 20 },
@@ -77,8 +79,6 @@ const PortfolioSection = () => {
                     alt={portfolio.title}
                     fill
                     className='object-cover'
-                    // priority
-                    fetchPriority='high'
                     loading='lazy'
                     sizes='(max-width: 768px) 100vw, 50vw'
                   />
@@ -135,6 +135,43 @@ const PortfolioSection = () => {
               >
                 {portfolio.description}
               </motion.p>
+
+              <div className='flex flex-wrap gap-2 pt-2'>
+                {portfolio.github && (
+                  <Button
+                    variant='outline'
+                    size='sm'
+                    asChild
+                    className='rounded-xl border-neutral-800 bg-neutral-900/50 text-white hover:bg-neutral-800'
+                  >
+                    <a
+                      href={portfolio.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <Github className='size-4' />
+                      GitHub
+                    </a>
+                  </Button>
+                )}
+                {portfolio.liveDemo && (
+                  <Button
+                    variant='default'
+                    size='sm'
+                    asChild
+                    className='rounded-xl'
+                  >
+                    <a
+                      href={portfolio.liveDemo}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <ExternalLink className='size-4' />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+              </div>
             </motion.div>
           </motion.div>
         ))}
