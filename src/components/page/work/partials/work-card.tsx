@@ -18,13 +18,15 @@ const WorkCard: React.FC<{ work: WorkType; className?: string }> = ({
         </h1>
       </div>
       <div className='relative h-8 w-[76px] overflow-hidden lg:h-12 lg:w-[114px]'>
-        <Image
-          fill
-          src={work.img}
-          alt={work.title}
-          className='object-contain'
-          sizes='(max-width: 1024px) 76px, 114px'
-        />
+        {work && work.img && (
+          <Image
+            fill
+            src={work.img}
+            alt={work.title}
+            className='object-contain'
+            sizes='(max-width: 1024px) 76px, 114px'
+          />
+        )}
       </div>
     </div>
 
