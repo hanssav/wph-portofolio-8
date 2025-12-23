@@ -13,7 +13,7 @@ import { DialogClose } from '@radix-ui/react-dialog';
 
 type ModalContentType = {
   message: MessageItem;
-  onSendMessage: () => void;
+  onSendMessage: (e?: React.FormEvent) => void;
 };
 
 const ModalContent: React.FC<ModalContentType> = ({

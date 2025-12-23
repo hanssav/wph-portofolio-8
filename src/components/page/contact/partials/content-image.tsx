@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, Variants } from 'motion/react';
 import IconCard from './icon-card';
-import { Circle, Dribbble, Instagram, Linkedin } from 'lucide-react';
+import { Circle, Github, Globe, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const contentVariants: Variants = {
@@ -56,11 +56,23 @@ const ContentImage: React.FC<{ contentImage: ContentImageType }> = ({
         className='lg:gap-3xl gap-xl flex justify-center'
       >
         {[
-          { icon: Dribbble, label: 'Dribbble' },
-          { icon: Instagram, label: 'Instagram' },
-          { icon: Linkedin, label: 'LinkedIn' },
-        ].map(({ icon, label }, idx) => (
-          <IconCard key={idx} icon={icon} label={label} />
+          {
+            icon: Github,
+            label: 'GitHub',
+            href: 'https://github.com/hanssav',
+          },
+          {
+            icon: Linkedin,
+            label: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/handiirawan/',
+          },
+          {
+            icon: Globe,
+            label: 'Website',
+            href: 'https://wph-portofolio-8.vercel.app',
+          },
+        ].map(({ icon, label, href }, idx) => (
+          <IconCard key={idx} icon={icon} label={label} href={href} />
         ))}
       </motion.div>
       <div className='flex-center gap-xs flex-col'>
