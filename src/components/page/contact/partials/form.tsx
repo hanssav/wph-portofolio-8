@@ -17,7 +17,10 @@ const formContainerVariants: Variants = {
   },
 };
 
-const FormContact: React.FC<BaseComponent> = ({ children }) => {
+const FormContact: React.FC<BaseComponent & { onSubmit?: React.FormEventHandler }> = ({
+  children,
+  onSubmit,
+}) => {
   return (
     <motion.div
       className='gap-3xl lg:gap-6xl flex flex-1 basis-80 flex-col'
@@ -26,7 +29,13 @@ const FormContact: React.FC<BaseComponent> = ({ children }) => {
       viewport={{ once: true, margin: '-100px' }}
       variants={formContainerVariants}
     >
-      {children}
+      <form
+        id='contact-form'
+        onSubmit={onSubmit}
+        className='gap-3xl lg:gap-6xl flex flex-col'
+      >
+        {children}
+      </form>
     </motion.div>
   );
 };
@@ -66,6 +75,7 @@ const FormField: React.FC<{ field: FormFieldType; idx: number }> = ({
           placeholder={field.placeholder}
           className={field.className}
           autoComplete={field.autocomplete}
+          required
         />
       ) : (
         <Input
@@ -74,6 +84,7 @@ const FormField: React.FC<{ field: FormFieldType; idx: number }> = ({
           type={field.type}
           placeholder={field.placeholder}
           autoComplete={field.autocomplete}
+          required
         />
       )}
     </motion.div>

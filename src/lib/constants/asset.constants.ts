@@ -14,6 +14,7 @@ export const IMAGES = {
     5: '/images/portfolio/porto-rn-movie-apps.png',
     6: '/images/portfolio/porto-social-app.png',
     7: '/images/portfolio/porto-library-app.png',
+    8: '/images/portfolio/porto-movie-app-web.png',
   },
   AVATAR_UNKNOWN: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
 };

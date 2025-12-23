@@ -50,8 +50,7 @@ export const PORTFOLIO_DATA: PortfolioType[] = [
     description:
       'A full-stack donation platform where users can browse social campaigns, make secure donations, and initiate fundraising efforts for community impact.',
     image: IMAGES.PORTOFOLIO_SECTION[4],
-    github: 'https://github.com/hanssav/wph-social-app',
-    liveDemo: 'https://wph-social-app.vercel.app/login',
+    github: 'https://github.com/hanssav/FS-Holy-Ways',
   },
   {
     id: 5,
@@ -75,8 +74,17 @@ export const PORTFOLIO_DATA: PortfolioType[] = [
     title: 'Streaming TMDB Movie App',
     description:
       'A high-performance movie streaming discovery app leveraging the TMDB API, featuring category browsing and responsive design.',
-    image: IMAGES.PORTOFOLIO_SECTION[6],
+    image: IMAGES.PORTOFOLIO_SECTION[8],
     github: 'https://github.com/hanssav/streaming-tmdb-api',
     liveDemo: 'https://streaming-tmdb-api.vercel.app/home',
+  },
+  {
+    id: 8,
+    title: 'WPH Social App',
+    description:
+      'A modern social networking platform built with Next.js, featuring real-time interactions, profile management, and a responsive UI.',
+    image: IMAGES.PORTOFOLIO_SECTION[6],
+    github: 'https://github.com/hanssav/wph-social-app',
+    liveDemo: 'https://wph-social-app.vercel.app/login',
   },
 ];

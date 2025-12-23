@@ -43,14 +43,41 @@ const ContactSection = () => {
   const [loading, setLoading] = React.useState(false);
   const [message, setMessage] = React.useState(MESSAGE.SUCCESS);
 
-  const onSendMessage = async () => {
+  const onSendMessage = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    if (!form) return;
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Basic validation
+    if (!data.name || !data.email || !data.message) {
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const isSuccess = Math.floor(Math.random() * 2);
-      setMessage(isSuccess ? MESSAGE.SUCCESS : MESSAGE.FAILED);
+      const response = await fetch('https://formspree.io/f/xojapobl', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
 
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      if (response.ok) {
+        setMessage(MESSAGE.SUCCESS);
+        form.reset();
+      } else {
+        setMessage(MESSAGE.FAILED);
+      }
+      setOpen(true);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setMessage(MESSAGE.FAILED);
       setOpen(true);
     } finally {
       setLoading(false);
@@ -72,7 +99,7 @@ const ContactSection = () => {
           </BackgroundImage>
         </div>
 
-        <FormContact>
+        <FormContact onSubmit={onSendMessage}>
           <motion.div
             className='gap-md flex flex-col'
             variants={formItemVariants}
@@ -81,7 +108,6 @@ const ContactSection = () => {
             <p className='sub-title'>{subTitle}</p>
             <h1 className='title'>{title}</h1>
           </motion.div>
-
           <div className='space-y-xl lg:space-y-3xl'>
             {FORM_FIELDS.map((field, idx) => (
               <FormField field={field} idx={idx} key={idx} />
@@ -93,7 +119,7 @@ const ContactSection = () => {
               variants={formItemVariants}
               custom={FORM_FIELDS.length + 1}
             >
-              <ButtonAction onClick={onSendMessage}>
+              <ButtonAction type='submit'>
                 {loading ? 'Sending... ' : 'Send Message'}
               </ButtonAction>
 
