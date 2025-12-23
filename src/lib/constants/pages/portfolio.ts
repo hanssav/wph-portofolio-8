@@ -28,7 +28,7 @@ export const PORTFOLIO_DATA: PortfolioType[] = [
   },
   {
     id: 2,
-    title: 'WPH Restaurant App',
+    title: 'Restaurant App',
     description:
       'A modern feature-rich food ordering platform with Optimistic UI updates, authentication, and cart management. Built for performance and seamless user experience.',
     image: IMAGES.PORTOFOLIO_SECTION[2],
@@ -37,7 +37,7 @@ export const PORTFOLIO_DATA: PortfolioType[] = [
   },
   {
     id: 3,
-    title: 'Personal Portfolio Website',
+    title: 'Personal Website',
     description:
       'A high-performance portfolio featuring advanced motion design and storytelling, showcasing technical expertise through interactive experiences.',
     image: IMAGES.PORTOFOLIO_SECTION[3],
@@ -62,7 +62,7 @@ export const PORTFOLIO_DATA: PortfolioType[] = [
   },
   {
     id: 6,
-    title: 'WPH Library App',
+    title: 'Library App',
     description:
       'A comprehensive library management system featuring book borrowing flows, profile management, and an admin dashboard with Optimistic UI updates.',
     image: IMAGES.PORTOFOLIO_SECTION[7],
@@ -80,7 +80,7 @@ export const PORTFOLIO_DATA: PortfolioType[] = [
   },
   {
     id: 8,
-    title: 'WPH Social App',
+    title: 'Social App',
     description:
       'A modern social networking platform built with Next.js, featuring real-time interactions, profile management, and a responsive UI.',
     image: IMAGES.PORTOFOLIO_SECTION[6],
