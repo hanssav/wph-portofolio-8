@@ -8,6 +8,7 @@ import {
 import { ExperienceItem } from './partials';
 import { motion, MotionProps } from 'motion/react';
 import { baseInViewAnimation } from '@/lib/constants/animation/base-animation';
+import Link from 'next/link';
 
 const MotionButton = motion.create(Button);
 
@@ -37,13 +38,15 @@ const ExperienceSection = () => {
         {(item) => <ExperienceItem key={item.id} item={item} />}
       </Mapper>
 
-      <MotionButton
-        {...buttonAnimation}
-        aria-label='hire-me'
-        className='w-full md:max-w-60 md:p-2'
-      >
-        HIRE ME
-      </MotionButton>
+      <Link href='#contact' className='w-full md:max-w-60'>
+        <MotionButton
+          {...buttonAnimation}
+          aria-label='hire-me'
+          className='w-full md:p-2'
+        >
+          HIRE ME
+        </MotionButton>
+      </Link>
     </Section.Root>
   );
 };
