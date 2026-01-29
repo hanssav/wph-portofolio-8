@@ -10,18 +10,20 @@ import {
 } from 'motion/react';
 import { AnimateType } from '..';
 
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 const cardVariants = (isEven: boolean): Variants => ({
   initial: {
     opacity: 0,
-    x: isEven ? 50 : -50,
+    x: isEven ? 36 : -36,
   },
   inView: {
     opacity: 1,
     x: 0,
     transition: {
-      delay: 0.2, // Reduced from 0.5
-      duration: 0.5, // Reduced from 0.8
-      ease: [0.25, 0.1, 0.25, 1],
+      delay: 0.1,
+      duration: 0.65,
+      ease: EASE_OUT,
     },
   },
 });
@@ -34,9 +36,9 @@ const timelineVariants: Variants = {
   inView: {
     scaleY: 1,
     transition: {
-      delay: 0.4, // Reduced from 0.8
-      duration: 0.8, // Reduced from 1.5
-      ease: [0.34, 1.56, 0.64, 1],
+      delay: 0.2,
+      duration: 0.75,
+      ease: EASE_OUT,
     },
   },
 };
@@ -50,8 +52,8 @@ const badgeVariants: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.3, // Reduced from 0.4
-      ease: [0.34, 1.56, 0.64, 1],
+      duration: 0.45,
+      ease: EASE_OUT,
     },
   },
 };

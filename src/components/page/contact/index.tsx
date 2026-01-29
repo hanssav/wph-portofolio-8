@@ -23,15 +23,17 @@ import React from 'react';
 
 const MotionDialog = motion.create(Dialog);
 
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 export const formItemVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   animate: (custom: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      delay: 0.2 + custom * 0.1,
-      ease: [0.25, 0.1, 0.25, 1],
+      duration: 0.65,
+      delay: 0.1 + custom * 0.08,
+      ease: EASE_OUT,
     },
   }),
 };
@@ -85,8 +87,12 @@ const ContactSection = () => {
   };
 
   return (
-    <section
+    <motion.section
       id={id}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 0.65, ease: EASE_OUT }}
       className='relative pb-10 md:border-t md:border-neutral-800 md:py-20 lg:py-[120px]'
     >
       <Shapes className='right-0 -bottom-10 left-auto z-20' />
@@ -128,7 +134,7 @@ const ContactSection = () => {
           </div>
         </FormContact>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

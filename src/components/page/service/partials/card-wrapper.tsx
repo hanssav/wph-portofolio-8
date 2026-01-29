@@ -3,14 +3,16 @@ import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'motion/react';
 import React from 'react';
 
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 const itemWrapperVariants: Variants = {
-  initial: { y: 30, opacity: 0 },
+  initial: { y: 24, opacity: 0 },
   inView: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1],
+      duration: 0.65,
+      ease: EASE_OUT,
     },
   },
 };

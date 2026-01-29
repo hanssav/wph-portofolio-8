@@ -5,39 +5,42 @@ import ExperienceListItem from './experience-list-item';
 import { ExperienceDataType } from '@/lib/constants/pages/experience';
 import { Mapper } from '@/components/container';
 
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 type CardAnimation = {
   root: MotionProps;
   child: Variants;
 };
 
 const cardAnimation = (isMe: boolean): CardAnimation => {
-  const x = 50;
+  const x = 36;
   const initial = { x: isMe ? x * -1 : x, opacity: 0 };
 
   const child: Variants = {
-    initial: { ...initial, y: 10 },
+    initial: { ...initial, y: 12 },
     inView: {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { duration: 0.65, ease: EASE_OUT },
     },
   };
 
   const root: MotionProps = {
     initial: 'initial',
     whileInView: 'inView',
-    viewport: { once: true, amount: 0.2 },
+    viewport: { once: true, amount: 0.3, margin: '0px 0px -10% 0px' },
     variants: {
       initial,
       inView: {
         x: 0,
         opacity: 1,
         transition: {
-          duration: 0.6,
-          delay: 0.5,
-          staggerChildren: 0.2,
-          delayChildren: 0.3,
+          duration: 0.65,
+          ease: EASE_OUT,
+          delay: 0.05,
+          staggerChildren: 0.12,
+          delayChildren: 0.15,
         },
       },
     },

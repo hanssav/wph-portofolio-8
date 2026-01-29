@@ -4,13 +4,15 @@ import { SkillData } from '@/lib/constants/pages';
 import { cn } from '@/lib/utils';
 import { BaseComponent } from '@/types';
 
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
 const skillVariants: Variants = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1, // Reduced from 0.2
-      delayChildren: 0.3,
+      delayChildren: 0.15,
     },
   },
 };
@@ -23,7 +25,7 @@ export const SKillPercent: React.FC<BaseComponent> = ({
     <motion.div
       initial={'initial'}
       whileInView={'animate'}
-      viewport={{ once: true, amount: 'some' }}
+      viewport={{ once: true, amount: 0.3, margin: '0px 0px -10% 0px' }}
       variants={skillVariants}
       className={cn(
         'flex-col-start lg:gap-3xl gap-xl flex-1 basis-80',
@@ -31,16 +33,16 @@ export const SKillPercent: React.FC<BaseComponent> = ({
       )}
     >
       {children}
-  </motion.div> 
+    </motion.div>
   );
 };
 
 const itemsVariants: Variants = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 20 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 }, // Reduced from 0.8
+    transition: { duration: 0.65, ease: EASE_OUT },
   },
 };
 
@@ -48,7 +50,7 @@ const barVariants: (percentage: number) => Variants = (percentage) => ({
   initial: { scaleX: 0 },
   animate: {
     scaleX: percentage / 100,
-    transition: { duration: 1.2, ease: 'easeOut' }, // Reduced from 2.0
+    transition: { duration: 1.1, ease: EASE_OUT },
   },
 });
 
@@ -58,9 +60,9 @@ const nameVariants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5, // Reduced from 0.8
-      ease: 'easeOut',
-      delay: 0.2, // Reduced from 0.5
+      duration: 0.65,
+      ease: EASE_OUT,
+      delay: 0.1,
     },
   },
 };
@@ -70,8 +72,8 @@ const lineVariants: Variants = {
   animate: {
     scaleX: 1,
     transition: {
-      duration: 1.9,
-      ease: 'easeOut',
+      duration: 1.4,
+      ease: EASE_OUT,
       // ease: [0.25, 0.1, 0.25, 1] as const, // custom cubic bezier
     },
   },
@@ -83,9 +85,9 @@ const percentageVariants = (id: number): Variants => ({
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5, // Reduced from 0.8
-      ease: 'easeOut',
-      delay: 0.5 + 0.1 * id, // Changed from 2 + 0.2 * id
+      duration: 0.65,
+      ease: EASE_OUT,
+      delay: 0.25 + 0.08 * id,
     },
   },
 });
