@@ -12,8 +12,8 @@ const mapperVariant: Variants = {
   animate: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1, // Reduced from 0.3
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
     },
   },
 };
@@ -25,7 +25,7 @@ export const SkillLogo: React.FC<BaseComponent> = ({ children, className }) => {
       whileInView='animate'
       variants={mapperVariant}
       viewport={{ once: true, amount: 0.3, margin: '0px 0px -10% 0px' }}
-      className={cn('gap-3xl grid grid-cols-4', className)}
+      className={cn('gap-4 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8', className)}
     >
       {children}
     </motion.div>
@@ -67,7 +67,7 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className={cn(
-        'flex-center group relative size-12 cursor-pointer rounded-full p-[4.8px]',
+        'flex-center group relative size-20 cursor-pointer rounded-full p-[4.8px]',
         'border border-neutral-800',
         className
       )}
@@ -87,14 +87,8 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
 
 export const SkillImage: React.FC<{ item: SkillsLogoType }> = ({ item }) => {
   return (
-    <div className='relative size-[26.24px] overflow-hidden rounded-full'>
-      <Image
-        fill
-        src={item.src}
-        alt={item.src}
-        unoptimized
-        sizes='26px'
-      />
+    <div className='relative size-[40px] overflow-hidden rounded-full'>
+      <Image fill src={item.src} alt={item.src} unoptimized sizes='40px' />
     </div>
   );
 };

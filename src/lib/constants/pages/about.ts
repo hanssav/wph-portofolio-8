@@ -93,15 +93,16 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       sm:left-auto sm:right-[15%] sm:translate-x-0 sm:top-8
       md:right-[10%] md:top-12
       lg:top-24 lg:left-[calc(50%+300px)] lg:right-auto
+      brightness-[0.7],
     `,
     size: `
       min-h-[134px] min-w-[134px]
       sm:w-[180px] sm:h-[180px]
       md:w-[240px] md:h-[240px]
-      lg:w-[250px] lg:h-[250px]
+      lg:w-[200px] lg:h-[200px]
     `,
     imageSizes: `
-      (min-width: 1024px) 250px,
+      (min-width: 1024px) 200px,
       (min-width: 768px) 240px,
       (min-width: 640px) 180px,
       134px
@@ -115,7 +116,7 @@ export const ABOUT_IMAGE: AboutImageType[] = [
       absolute top-[164px] left-[calc(50%)] -translate-x-1/2
       sm:top-[190px]
       md:top-[250px]
-      lg:top-[calc(50%)] lg:left-[calc(50%+240px)]
+      lg:top-[calc(50%)] lg:left-[calc(50%+340px)]
       brightness-[0.6],
     `,
     size: `

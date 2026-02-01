@@ -7,7 +7,7 @@ export const floatAnimation: Partial<MotionProps> = {
     scale: [1, 1.02, 1],
   },
   transition: {
-    duration: 8,
+    duration: 6,
     repeat: Infinity,
     ease: 'easeInOut',
   },
@@ -21,7 +21,7 @@ export const figure8Animation: Partial<MotionProps> = {
     scale: [1, 1.05, 1, 1.05, 1],
   },
   transition: {
-    duration: 12,
+    duration: 8,
     repeat: Infinity,
     ease: 'easeInOut',
   },
@@ -34,7 +34,7 @@ export const orbitAnimation: Partial<MotionProps> = {
     rotate: [0, 10, 0, -10, 0],
   },
   transition: {
-    duration: 10,
+    duration: 7,
     repeat: Infinity,
     ease: 'linear',
   },
@@ -48,7 +48,7 @@ export const waveAnimation: Partial<MotionProps> = {
     scale: [1, 1.03, 1, 1.03, 1],
   },
   transition: {
-    duration: 11,
+    duration: 8,
     repeat: Infinity,
     ease: 'easeInOut',
   },
@@ -67,7 +67,7 @@ export const baseInViewAnimation: (
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: [0.25, 0.1, 0.25, 1],
         delayChildren,
         staggerChildren,

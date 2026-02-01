@@ -16,7 +16,7 @@ const childAnimation: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: [0.25, 0.1, 0.25, 1],
     },
   },
@@ -25,21 +25,29 @@ const childAnimation: Variants = {
 const portfolioCardAnimation: Variants = {
   hover: {
     y: -8,
-    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 
 const imageAnimation: Variants = {
   hover: {
     scale: 1.1,
-    transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};
+
+const overlayAnimation: Variants = {
+  initial: { opacity: 0 },
+  hover: {
+    opacity: 1,
+    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 
 const titleAnimation: Variants = {
   hover: {
     x: 4,
-    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 
@@ -54,7 +62,7 @@ const PortfolioSection = () => {
       className='content-container relative flex-col'
     >
       <motion.div
-        {...baseInViewAnimation(0.3, 1)}
+        {...baseInViewAnimation(0.2, 0.2)}
         className={cn(
           'base-container lg:gap-y-6xl md:gap-x-2xl md:gap-y-4xl gap-8',
           'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
@@ -68,6 +76,13 @@ const PortfolioSection = () => {
               whileHover='hover'
               variants={portfolioCardAnimation}
               className='space-y-lg group relative cursor-pointer'
+              onClick={() => {
+                if (portfolio.liveDemo) {
+                  window.open(portfolio.liveDemo, '_blank');
+                } else if (portfolio.github) {
+                  window.open(portfolio.github, '_blank');
+                }
+              }}
             >
               <motion.div className='relative aspect-361/270 w-full overflow-hidden rounded-2xl'>
                 <motion.div
@@ -81,6 +96,10 @@ const PortfolioSection = () => {
                     className='object-cover'
                     loading='lazy'
                     sizes='(max-width: 768px) 100vw, 50vw'
+                  />
+                  <motion.div
+                    variants={overlayAnimation}
+                    className='absolute inset-0 bg-black/50'
                   />
                 </motion.div>
               </motion.div>

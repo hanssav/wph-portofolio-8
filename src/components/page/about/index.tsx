@@ -51,6 +51,7 @@ const AboutSection = () => {
               sizes={item.imageSizes}
               className='object-cover'
             />
+            <div className='absolute inset-0 bg-black/40' />
           </motion.div>
         )}
       </Mapper>

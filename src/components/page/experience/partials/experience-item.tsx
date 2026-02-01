@@ -22,25 +22,25 @@ const cardAnimation = (isMe: boolean): CardAnimation => {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { duration: 0.65, ease: EASE_OUT },
+      transition: { duration: 0.5, ease: EASE_OUT },
     },
   };
 
   const root: MotionProps = {
     initial: 'initial',
     whileInView: 'inView',
-    viewport: { once: true, amount: 0.3, margin: '0px 0px -10% 0px' },
+    viewport: { once: true, amount: 0, margin: '0px 0px -200% 0px' },
     variants: {
       initial,
       inView: {
         x: 0,
         opacity: 1,
         transition: {
-          duration: 0.65,
+          duration: 0.5,
           ease: EASE_OUT,
           delay: 0.05,
           staggerChildren: 0.12,
-          delayChildren: 0.15,
+          delayChildren: 0.1,
         },
       },
     },

@@ -38,7 +38,7 @@ const HeroContent = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.8,
-              delay: 1,
+              delay: 0.5,
             }}
           >
             INTERACTIVE
