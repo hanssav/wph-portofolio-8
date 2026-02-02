@@ -135,7 +135,7 @@ const PortfolioSection = () => {
                     }}
                     className='text-lg font-bold tracking-wider text-black'
                   >
-                    VISIT
+                    DETAIL
                   </motion.span>
                 </motion.div>
               </motion.div>
