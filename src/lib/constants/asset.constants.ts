@@ -16,7 +16,8 @@ export const IMAGES = {
     7: '/images/portfolio/porto-library-app.png',
     8: '/images/portfolio/porto-movie-app-web.png',
   },
-  AVATAR_UNKNOWN: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+  AVATAR_UNKNOWN:
+    'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
 };
 
 export const ICONS = {
@@ -26,9 +27,12 @@ export const ICONS = {
     3: 'https://cdn.simpleicons.org/expo/white',
     4: 'https://cdn.simpleicons.org/typescript',
     5: 'https://cdn.simpleicons.org/redux',
-    6: 'https://cdn.simpleicons.org/reactquery',
+    6: 'https://tanstack.com/images/logos/logo-color-100.png',
     7: 'https://cdn.simpleicons.org/tailwindcss',
-    8: 'https://cdn.simpleicons.org/framer',
+    8: 'https://cdn.brandfetch.io/idDJv1mfrb/theme/light/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1753779030563',
+    9: 'https://cdn.simpleicons.org/antdesign',
+    10: 'https://cdn.simpleicons.org/jest/white',
+    11: 'https://cdn.simpleicons.org/testinglibrary',
   },
   COMPANY: {
     1: '/icons/company-logo-1.svg',

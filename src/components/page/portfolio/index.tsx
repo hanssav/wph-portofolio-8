@@ -77,10 +77,11 @@ const PortfolioSection = () => {
               variants={portfolioCardAnimation}
               className='space-y-lg group relative cursor-pointer'
               onClick={() => {
-                if (portfolio.liveDemo) {
-                  window.open(portfolio.liveDemo, '_blank');
-                } else if (portfolio.github) {
-                  window.open(portfolio.github, '_blank');
+                // Scroll to related projects section
+                const relatedSection =
+                  document.getElementById('related-projects');
+                if (relatedSection) {
+                  relatedSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
             >
@@ -153,6 +154,7 @@ const PortfolioSection = () => {
                     size='sm'
                     asChild
                     className='rounded-xl border-neutral-800 bg-neutral-900/50 text-white hover:bg-neutral-800'
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <a
                       href={portfolio.github}
@@ -170,6 +172,7 @@ const PortfolioSection = () => {
                     size='sm'
                     asChild
                     className='rounded-xl'
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <a
                       href={portfolio.liveDemo}

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion, Variants } from 'motion/react';
 import { BaseComponent } from '@/types';
@@ -25,7 +27,7 @@ export const SkillLogo: React.FC<BaseComponent> = ({ children, className }) => {
       whileInView='animate'
       variants={mapperVariant}
       viewport={{ once: true, amount: 0.3, margin: '0px 0px -10% 0px' }}
-      className={cn('gap-4 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8', className)}
+      className={cn('flex-center flex-wrap gap-3 sm:gap-4 md:gap-6', className)}
     >
       {children}
     </motion.div>
@@ -67,8 +69,9 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className={cn(
-        'flex-center group relative size-20 cursor-pointer rounded-full p-[4.8px]',
+        'group relative flex cursor-pointer items-center justify-center rounded-full p-1 sm:p-1.5',
         'border border-neutral-800',
+        'size-16 sm:size-18 md:size-20 lg:size-24',
         className
       )}
     >
@@ -87,8 +90,14 @@ export const SkillLogoItem: React.FC<BaseComponent> = ({
 
 export const SkillImage: React.FC<{ item: SkillsLogoType }> = ({ item }) => {
   return (
-    <div className='relative size-[40px] overflow-hidden rounded-full'>
-      <Image fill src={item.src} alt={item.src} unoptimized sizes='40px' />
+    <div className='relative size-8 overflow-hidden rounded-full sm:size-9 md:size-10 lg:size-[40px]'>
+      <Image
+        fill
+        src={item.src}
+        alt={item.src}
+        unoptimized
+        sizes='(max-width: 640px) 32px, (max-width: 768px) 36px, (max-width: 1024px) 40px, 40px'
+      />
     </div>
   );
 };

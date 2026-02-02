@@ -35,4 +35,7 @@ export const SKILLS_DATA: SkillData[] = [
   { id: 6, name: 'TanStack Query', percentage: 90 },
   { id: 7, name: 'Tailwind CSS', percentage: 95 },
   { id: 8, name: 'Framer Motion', percentage: 80 },
+  { id: 9, name: 'Ant Design', percentage: 85 },
+  { id: 10, name: 'Jest', percentage: 75 },
+  { id: 11, name: 'React Testing Library', percentage: 75 },
 ];
