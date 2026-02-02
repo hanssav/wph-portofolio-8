@@ -5,3 +5,4 @@ export * from './faq';
 export * from './service';
 export * from './about';
 export * from './skill';
+export * from './related';

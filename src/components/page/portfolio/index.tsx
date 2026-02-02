@@ -146,15 +146,6 @@ const PortfolioSection = () => {
                 {portfolio.title}
               </motion.h1>
 
-              <motion.p
-                className='desc text-sm-regular lg:text-md-regular'
-                initial={{ opacity: 0.8 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                {portfolio.description}
-              </motion.p>
-
               <div className='flex flex-wrap gap-2 pt-2'>
                 {portfolio.github && (
                   <Button
